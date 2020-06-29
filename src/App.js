@@ -12,6 +12,7 @@ class App extends React.Component{
         return (
             <div id = 'App'>
                 <Navbar />
+                <Grid />
             </div>
         )
     }

@@ -8,24 +8,19 @@ class Gridline extends React.Component{
             showGrid: true
         };
         if (this.props.lineType === 'row') {
-            this.initialPos = {'top': this.props.ruledPos,
-                                'left': this.props.offsetPos};
+            this.initialPos = {'top': `${this.props.ruledPos}%`,
+                                'left': `${this.props.offsetPos}%`};
         } else {
-            this.initialPos = {'left': this.props.ruledPos,
-                                'top': this.props.offsetPos};
+            this.initialPos = {'left': `${this.props.ruledPos}%`,
+                                'top': `${this.props.offsetPos}%`};
         }
     }
     render(){
         return( 
-            <CSSTransition 
-                in = {this.state.showGrid}
-                appear = {true}
-                classNames = {`line-${this.props.lineType}`}>
                 <div 
-                    className = {'line-' + this.props.lineType + '-enter'} 
+                    className = {`line line-${this.props.lineType}-appear`} 
                     style = {this.initialPos}>
-                </div>
-            </CSSTransition>
+                </div> 
         );
     }
 }

@@ -10,6 +10,7 @@
     height: 25%;
     background-color: white;
     clip-path: polygon(100% 0, 100% 100%, 5% 25%, 5% 0%);
+    z-index: 2;
 }
 .nav-content{
     position: relative;
@@ -35,10 +36,11 @@
     position: absolute;
     background: transparent;
     background:blue;
+    z-index: 1;
 }
 
 .line-row-appear{
-    height: 0%;
+    height: 100%;
     width: 2%;
 }
 .line-row-appear-active{
@@ -47,8 +49,8 @@
     transition: height 2s linear;
 }
 .line-col-appear{
-    height: 0%;
-    width: 2%;
+    height: 100%;
+    width: 2px;
 }
 .line-row-appear-active{
     height: 100%;
