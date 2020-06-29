@@ -1,4 +1,4 @@
-html, body{
+#App{
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
     overflow-x:hidden; /* overflow-x:hidden; important consideration */
@@ -22,40 +22,8 @@ html, body{
     color: black;
 }
 
-@keyframes open{
-    0% {clip-path: polygon(100% 0, 100% 0,100% 0,100% 0);}
-    100%{clip-path: polygon(100% 0, 100% 100%, 5% 25%, 5% 0%);}
-}
-/*
-.gridlines-vertical{
-    background-color: black;
-    background-size: 12.5% 12.5%;
-    background-repeat: repeat-x repeat-y;
-    background-image: 
-    linear-gradient(to right, 
-                transparent 12.5%,
-                #2196f3 12.5% 13.5%, 
-                transparent 13.5%  61.5%,
-                #2196f3 61.5% 62.5%,
-                transparent 62.5% 74%,
-                #2196f3 74% 75%,
-                transparent 75%),
-    linear-gradient(to top, 
-                transparent 12.5%,
-                #2196f3 12.5% 13.5%, 
-                transparent 13.5%  61.5%,
-                #2196f3 61.5% 62.5%,
-                transparent 62.5% 74%,
-                #2196f3 74% 75%,
-                 transparent 75%);
-                 
-}
 
-@keyframes tocome{
-    to{width: 100%; height: 100%}
-}
-*/
-.gridlines-vertical{
+.grid{
     position: absolute;
     top: 0;
     left: 0;
@@ -63,11 +31,27 @@ html, body{
     height: 100%;
 
 }
-.line1{
+.line{
     position: absolute;
     background: transparent;
-    left:50%;
+    background:blue;
+}
+
+.line-row-appear{
+    height: 0%;
+    width: 2%;
+}
+.line-row-appear-active{
     height: 100%;
-    background:green;
-    width: 2px
+    width: 2%;
+    transition: height 2s linear;
+}
+.line-col-appear{
+    height: 0%;
+    width: 2%;
+}
+.line-row-appear-active{
+    height: 100%;
+    width: 2%;
+    transition: height 2s linear;
 }
