@@ -1,5 +1,5 @@
-import React from 'react'
-import CSSTransition from 'react-transition-group'
+import React from 'react';
+import { CSSTransition } from 'react-transition-group';
 
 class Gridline extends React.Component{
     constructor(props){
@@ -17,10 +17,16 @@ class Gridline extends React.Component{
     }
     render(){
         return( 
-                <div 
-                    className = {`line line-${this.props.lineType}-appear`} 
-                    style = {this.initialPos}>
-                </div> 
+                <CSSTransition
+                in = {true}
+                appear = {true}
+                classNames = {`line-${this.props.lineType}`}
+                timeout={1000}>
+                        <div 
+                            className = "line"
+                            style = {this.initialPos}>
+                        </div> 
+                </CSSTransition>   
         );
     }
 }
