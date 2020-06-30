@@ -15,8 +15,8 @@ class Gridline extends React.Component{
             this.style = {'left': `${this.props.ruledPos}%`,
                             'top': `${this.props.offsetPos}%`};
         }
-        this.style.transitionDuration = `${this.props.duration}ms, ${this.props.duration}ms`;
-        this.style.transitionDelay = `${this.props.delay}ms, ${this.props.delay}ms`;
+        this.style.transitionDuration = `${this.props.duration}ms`;
+        this.style.transitionDelay = `${this.props.delay}ms`;
     }
     render(){
         return( 

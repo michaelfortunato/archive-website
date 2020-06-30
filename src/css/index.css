@@ -5,23 +5,75 @@
     background-color: #515151;
     
 }
-.nav{
-    opacity: 0;
+
+.navbar{
     width: 100%;
     height: 25%;
-    background-color: white;
-    clip-path: polygon(100% 0, 100% 100%, 5% 25%, 5% 0%);
 }
-.nav-content{
+
+.nav-button{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    height: 100px;
+    width: 100px;
+    background-color: blue;
+    z-index: 2;
+}
+.navbar-content{
     position: relative;
     left: 5%;
     height: 100%;
+    transform: translateY(-100%);
+    background-color: white;
+    clip-path: polygon(100% 0, 100% 100%, 5% 25%, 5% 0%);
+    z-index: 1;
 }
-.nav-item{
+.navbar-item{
     position: relative;
     top: 25%;
     color: black;
 }
+
+.slide-down-enter{
+    transform: translateY(-100%);
+}
+.slide-down-enter-active{
+    transform: translateY(0%);
+    transition: transform 250ms;
+
+}
+.slide-down-enter-done{
+    transform: translateY(0);
+
+}
+.slide-down-exit{
+    transform: translateY(0);
+}
+.slide-down-exit-active{
+    transform: translateY(-100%);
+    transition: transform 250ms;
+
+}
+.slide-down-exit-done{
+    transform: translateY(-100%);
+
+}
+
+
+
+/*
+.fade-appear{
+    opacity: 0;
+}
+.fade-appear-active{
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+.fade-appear-done{
+    opacity: 1;
+}
+*/
 
 .fade-enter{
     opacity: 0;
@@ -43,17 +95,6 @@
 }
 .fade-exit-done{
     opacity: 0;
-}
-
-.fade-appear{
-    opacity: 0;
-}
-.fade-appear-active{
-    opacity: 1;
-    transition: opacity 1000ms;
-}
-.fade-appear-done{
-    opacity: 1;
 }
 
 

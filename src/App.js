@@ -11,8 +11,8 @@ class App extends React.Component{
     render() {
         return (
             <div id = 'App'>
-                <Grid />
                 <Navbar />
+                <Grid />
             </div>
         )
     }

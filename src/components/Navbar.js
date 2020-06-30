@@ -9,24 +9,24 @@ class Navbar extends React.Component {
         this.state = {isVisible: false};
     }
     render() {
+        console.log('clicked');
         return(
-            <button onClick ={() => this.setState({isVisible: true})}>
-            <CSSTransition
-                in = {this.state.isVisible}
-                timeout = {1000}
-                classNames = 'fade'
-                onEntered= {() => this.setState({isVisible: false})}
-            >
-                <div class = 'nav'>
-                    <div class = 'nav-content row'>
-                        <div class="nav-item col s1 offset-s6"><h5 class="center-align">Home</h5></div>
-                        <div class="nav-item col s1"><h5 class="center-align">About</h5></div>
-                        <div class="nav-item col s1"><h5 class="center-align">Home</h5></div>
-                        <div class="nav-item col s1"><h5 class="center-align">About</h5></div>
-                    </div>
+            <div className = 'navbar'>
+                <div className = 'nav-button'
+                    onClick = {() => this.setState({isVisible: !this.state.isVisible})}>
                 </div>
-            </CSSTransition>
-            </button>
+                <CSSTransition
+                    in = {this.state.isVisible}
+                    classNames = 'slide-down'
+                    timeout = {250}>
+                    <div className = 'navbar-content row'>
+                        <div className="navbar-item col s1 offset-s6"><h5 className="center-align">Home</h5></div>
+                        <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
+                        <div className="navbar-item col s1"><h5 className="center-align">Home</h5></div>
+                        <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
+                    </div>
+                </CSSTransition>
+            </div>
         );
     }
 }
