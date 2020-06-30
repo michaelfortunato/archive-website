@@ -18,7 +18,7 @@ class Grid extends React.Component {
             ruledPos = offset + i * spacing;
             offsetPos = Math.random() * 100;
             duration =  100+ Math.random() * 1000;
-            delay = 20 + Math.random() * 1000;
+            delay = 400 + Math.random() * 2000;
             lines.push(
                 <Gridline 
                     lineType = {lineType} 

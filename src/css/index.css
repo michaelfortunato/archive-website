@@ -6,6 +6,7 @@
     
 }
 .nav{
+    opacity: 0;
     width: 100%;
     height: 25%;
     background-color: white;
@@ -20,6 +21,39 @@
     position: relative;
     top: 25%;
     color: black;
+}
+
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+.fade-enter-done{
+    opacity: 1;
+}
+
+.fade-exit{
+    opacity: 1;
+}
+.fade-exit-active{
+    opacity: 0;
+    transition: opacity 1000ms;
+}
+.fade-exit-done{
+    opacity: 0;
+}
+
+.fade-appear{
+    opacity: 0;
+}
+.fade-appear-active{
+    opacity: 1;
+    transition: opacity 1000ms;
+}
+.fade-appear-done{
+    opacity: 1;
 }
 
 
@@ -38,13 +72,16 @@
 
 /* grid row loading animation */
 .line-row-appear{
-    height: 1px;
-    width: 0%;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
 }
 .line-row-appear-active{
+    height: 1px;
     width: 100%;
     left: 0% !important;
-    transition-property: left, width;
+    border-radius: 0%;
+    transition-property: left, width, border-radius, height;
 }
 .line-row-appear-done{
     height: 1px;
@@ -54,14 +91,17 @@
 
 /* grid col loading animation */
 .line-col-appear{
-    height: 0%;
-    width: 1px;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
 }
 .line-col-appear-active{
     height: 100%;
     width: 1px;
     top: 0% !important;
-    transition: top, height;
+    border-radius: 0%;
+    transition: top, height, border-radius, width;
+    
 }
 .line-col-appear-done{
     height: 100%;
