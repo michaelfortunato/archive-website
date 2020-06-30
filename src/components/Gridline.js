@@ -5,26 +5,29 @@ class Gridline extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            showGrid: true
+            showGridline: true
         };
         if (this.props.lineType === 'row') {
-            this.initialPos = {'top': `${this.props.ruledPos}%`,
-                                'left': `${this.props.offsetPos}%`};
+            this.style = {'top': `${this.props.ruledPos}%`,
+                            'left': `${this.props.offsetPos}%`, 
+                        };
         } else {
-            this.initialPos = {'left': `${this.props.ruledPos}%`,
-                                'top': `${this.props.offsetPos}%`};
+            this.style = {'left': `${this.props.ruledPos}%`,
+                            'top': `${this.props.offsetPos}%`};
         }
+        this.style.transitionDuration = `${this.props.duration}ms, ${this.props.duration}ms`;
+        this.style.transitionDelay = `${this.props.delay}ms, ${this.props.delay}ms`;
     }
     render(){
         return( 
                 <CSSTransition
-                in = {true}
+                in = {this.state.showGridline}
                 appear = {true}
                 classNames = {`line-${this.props.lineType}`}
-                timeout={1000}>
+                timeout={this.props.duration + this.props.delay}>
                         <div 
                             className = "line"
-                            style = {this.initialPos}>
+                            style = {this.style}>
                         </div> 
                 </CSSTransition>   
         );

@@ -2,7 +2,7 @@
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
     overflow-x:hidden; /* overflow-x:hidden; important consideration */
-    background-color: black;
+    background-color: #515151;
     
 }
 .nav{
@@ -33,39 +33,40 @@
 }
 .line{
     position: absolute;
-    background:blue;
+    background:#6699CC;
 }
 
+/* grid row loading animation */
 .line-row-appear{
     height: 1px;
     width: 0%;
 }
 .line-row-appear-active{
     width: 100%;
-    left: 100%;
-    transition: left 1000ms linear, width 1000ms linear;
+    left: 0% !important;
+    transition-property: left, width;
 }
 .line-row-appear-done{
     height: 1px;
     width: 100%;
-    left:100%;
+    left:0% !important;
 }
 
-
-
-
+/* grid col loading animation */
 .line-col-appear{
     height: 0%;
-    width: 2px;
+    width: 1px;
 }
 .line-col-appear-active{
     height: 100%;
-    width: 2px;
-    transition: height 1000ms linear;
+    width: 1px;
+    top: 0% !important;
+    transition: top, height;
 }
 .line-col-appear-done{
     height: 100%;
-    width: 2px;
+    width: 1px;
+    top: 0% !important;
 
 }
 
