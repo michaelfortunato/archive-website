@@ -48,21 +48,21 @@ class Grid extends React.Component {
                                         this.props.offset,
                                         0);
         return(
-            <Gridline 
+            /*<Gridline 
                     key = {1}
                     id = {1}
                     lineType = {'row'} 
-                    offsetPos = {0} 
+                    offsetPos = {50} 
                     ruledPos = {50}
                     duration = {1000}
-                    delay = {500}
-                />
+                    delay = {1000}
+                />*/
            /* <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
                 timeout = {this.props.duration + this.props.delay}>  */
-           /* <div className = 'grid'>
+           <div className = 'grid'>
                 {rowLines}
                 {colLines}
             </div> 

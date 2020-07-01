@@ -151,31 +151,31 @@
 
 
 /* grid row loading animation */
-.line-row-appear .line-row-enter{
+.line-row-appear{
     height: 10px;
     width: 10px;
     border-radius: 50%;
 }
-.line-row-appear-active .line-row-enter-active{
+.line-row-appear-active{
     height: 1px;
     width: 100%;
     left: 0% !important;
     border-radius: 0%;
     transition-property: left, width, border-radius, height;
 }
-.line-row-appear-done .line-row-enter-done{
+.line-row-appear-done{
     height: 1px;
     width: 100%;
     left:0% !important;
 }
 
 /* grid col loading animation */
-.line-col-appear .line-col-enter{
+.line-col-appear{
     height: 10px;
     width: 10px;
     border-radius: 50%;
 }
-.line-col-appear-active .line-col-enter-active{
+.line-col-appear-active{
     height: 100%;
     width: 1px;
     top: 0% !important;
@@ -184,7 +184,7 @@
     
 }
 
-.line-col-enter-done .line-col-enter-done{
+.line-col-enter-done{
     height: 100%;
     width: 1px;
     top: 0% !important;
