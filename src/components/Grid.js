@@ -5,6 +5,12 @@ import { CSSTransition } from 'react-transition-group'
 
 
 class Grid extends React.Component {
+    randn_bm(mu, sigma) {
+        var u = 0, v = 0;
+        while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
+        while(v === 0) v = Math.random();
+        return (mu + sigma * Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v ));
+    }
     renderLines(numLines, offset, isRow) {
         let ruledPos;
         let offsetPos;
@@ -19,7 +25,7 @@ class Grid extends React.Component {
             ruledPos = offset + i * spacing;
             offsetPos = Math.random() * 100;
             duration =  100 + Math.random() * this.props.duration;
-            delay = 500 + Math.random() * this.props.delay;
+            delay = 700 + Math.random() * this.props.delay;
             lines.push(
                 <Gridline 
                     key = {i + i*isRow}
@@ -60,7 +66,7 @@ Grid.defaultProps = {
     numLinesCol: 23,
     offset: 0,
     duration: 1000,
-    delay: 1500
+    delay: 2000
 };
 
 export default Grid;
