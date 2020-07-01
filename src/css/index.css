@@ -142,8 +142,6 @@
 .pop-appear-active{
     opacity: 1;
     transition-property: opacity;
-    transition-duration: 1000ms;
-    transition-delay: 1000ms;
     transition-timing-function: ease-out;
 }
 .pop-appear-done{
@@ -163,8 +161,6 @@
     width: 100%;
     left: 0% !important;
     border-radius: 0%;
-    transition-duration: 1000ms;
-    transition-delay: 1000ms;
     transition-property: left, width, border-radius, height;
 }
 .line-row-appear-done .line-row-enter-done{
@@ -184,8 +180,6 @@
     width: 1px;
     top: 0% !important;
     border-radius: 0%;
-    transition-duration: 1000ms;
-    transition-delay: 1000ms;
     transition: top, height, border-radius, width;
     
 }
