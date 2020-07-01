@@ -5,8 +5,7 @@ class Gridline extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            showGridline: true, 
-            hasEntered: false
+            hasPopped: false
         };
         if (this.props.lineType === 'row') {
             this.style = {'top': `${this.props.ruledPos}%`,
@@ -16,23 +15,43 @@ class Gridline extends React.Component{
             this.style = {'left': `${this.props.ruledPos}%`,
                             'top': `${this.props.offsetPos}%`};
         }
-        this.style.transitionDuration = `${this.props.duration}ms`;
-        this.style.transitionDelay = `${this.props.delay}ms`;
+        this.style.transitionDuration = `${this.props.transitionDuration}ms`;
+        this.style.transitionDelay = `${this.props.transitionDelay}ms`;
     }
     render(){
-        return( 
-                <CSSTransition
-                in = {true}
-                appear = {true}
-                classNames = {`line-${this.props.lineType}`}
-                timeout={this.props.duration + this.props.delay}
-                >
-                        <div 
-                            className = "line"
-                            style = {this.style}>
-                        </div> 
-                </CSSTransition>   
-        );
+        let hasPopped = this.state.hasPopped;
+        if(!hasPopped) {
+            return( 
+                    <CSSTransition
+                    key = {this.props.id}
+                    in = {!hasPopped}
+                    appear = {true}
+                    classNames = {`pop`}
+                    timeout={2000}
+                    onEntered = {() => this.setState({hasPopped: true})}
+                    >
+                            <div 
+                                className = "line"
+                                style = {this.style}>
+                            </div> 
+                    </CSSTransition>   
+                );
+        } else {
+             return(   
+                    <CSSTransition
+                        key = {this.props.id + 1} 
+                        in = {this.state.hasPopped}
+                        appear = {true}
+                        classNames = {`line-${this.props.lineType}`}
+                        timeout={1000}
+                        >
+                            <div 
+                                className = "line"
+                                style = {this.style}>
+                            </div> 
+                     </CSSTransition>   
+            );
+        }
     }
 }
 

@@ -34,8 +34,6 @@
     position: relative;
     left: 5%;
     height: 100%;
-    transform: translateY(-100%);
-    background-color:#F5F5F5;
     clip-path: polygon(100% 0, 100% 100%, 5% 25%, 5% 0%);
     z-index: 1;
 }
@@ -131,7 +129,28 @@
 .line{
     position: absolute;
     background:#6699CC;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
 }
+
+/*Popping animations for grid lines */
+
+.pop-appear{
+    opacity: 0;
+}
+.pop-appear-active{
+    opacity: 1;
+    transition-property: opacity;
+    transition-delay: 1000ms;
+    transition-duration: 1000ms;
+    transition-timing-function: ease-out;
+}
+.pop-appear-done{
+    opacity: 1;
+}
+
+
 
 /* grid row loading animation */
 .line-row-appear{
@@ -144,9 +163,29 @@
     width: 100%;
     left: 0% !important;
     border-radius: 0%;
+    transition-delay: 0ms;
+    transition-duration: 1000ms;
     transition-property: left, width, border-radius, height;
 }
 .line-row-appear-done{
+    height: 1px;
+    width: 100%;
+    left:0% !important;
+}
+.line-row-enter{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+.line-row-enter-active{
+    height: 1px;
+    width: 100%;
+    left: 0% !important;
+    border-radius: 0%;
+    transition-delay: 0;
+    transition-property: left, width, border-radius, height;
+}
+.line-row-enter-done{
     height: 1px;
     width: 100%;
     left:0% !important;
@@ -166,7 +205,27 @@
     transition: top, height, border-radius, width;
     
 }
-.line-col-appear-done{
+
+.line-col-enter-done{
+    height: 100%;
+    width: 1px;
+    top: 0% !important;
+
+}
+.line-col-enter{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}
+.line-col-enter-active{
+    height: 100%;
+    width: 1px;
+    top: 0% !important;
+    border-radius: 0%;
+    transition: top, height, border-radius, width;
+    
+}
+.line-col-enter-done{
     height: 100%;
     width: 1px;
     top: 0% !important;

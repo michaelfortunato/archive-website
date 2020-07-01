@@ -28,7 +28,7 @@ class Grid extends React.Component {
             delay = 700 + Math.random() * this.props.delay;
             lines.push(
                 <Gridline 
-                    key = {i + i*isRow}
+                    id = {i + this.props.numLinesCol* isRow}
                     lineType = {lineType} 
                     offsetPos = {offsetPos} 
                     ruledPos = {ruledPos}
@@ -47,16 +47,26 @@ class Grid extends React.Component {
                                         this.props.offset,
                                         0);
         return(
-            <CSSTransition
+            <Gridline 
+                    id = {1}
+                    lineType = {'row'} 
+                    offsetPos = {50} 
+                    ruledPos = {50}
+                    duration = {100}
+                    delay = {100}
+                />
+            /*
+           /* <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
-                timeout = {this.props.duration + this.props.delay}>
-            <div className = 'grid' style = {{transitionDelay: `${300 + this.props.duration + this.props.delay}ms`}}>
+                timeout = {this.props.duration + this.props.delay}>  */
+            /*<div className = 'grid'>
                 {rowLines}
                 {colLines}
-            </div>  
-            </CSSTransition>
+            </div>  */
+            /*</CSSTransition> 
+            */
         );
     }
 }
