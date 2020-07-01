@@ -1,6 +1,5 @@
 import React from 'react'
 
-
 import './css/index.css'
 import './css/materialize.css'
 
@@ -12,6 +11,7 @@ class App extends React.Component{
         return (
             <div id = 'App'>
                 <Navbar />
+                
                 <Grid />
             </div>
         )

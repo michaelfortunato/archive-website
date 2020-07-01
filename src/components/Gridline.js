@@ -5,7 +5,8 @@ class Gridline extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            showGridline: true
+            showGridline: true, 
+            hasEntered: false
         };
         if (this.props.lineType === 'row') {
             this.style = {'top': `${this.props.ruledPos}%`,
@@ -21,10 +22,11 @@ class Gridline extends React.Component{
     render(){
         return( 
                 <CSSTransition
-                in = {this.state.showGridline}
+                in = {true}
                 appear = {true}
                 classNames = {`line-${this.props.lineType}`}
-                timeout={this.props.duration + this.props.delay}>
+                timeout={this.props.duration + this.props.delay}
+                >
                         <div 
                             className = "line"
                             style = {this.style}>
