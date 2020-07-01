@@ -28,7 +28,8 @@ class Grid extends React.Component {
             delay = 700 + Math.random() * this.props.delay;
             lines.push(
                 <Gridline 
-                    id = {i + this.props.numLinesCol* isRow}
+                    key = {2*i + this.props.numLinesCol * isRow}
+                    id = {2*i + this.props.numLinesCol * isRow}
                     lineType = {lineType} 
                     offsetPos = {offsetPos} 
                     ruledPos = {ruledPos}
@@ -47,24 +48,15 @@ class Grid extends React.Component {
                                         this.props.offset,
                                         0);
         return(
-            <Gridline 
-                    id = {1}
-                    lineType = {'row'} 
-                    offsetPos = {50} 
-                    ruledPos = {50}
-                    duration = {100}
-                    delay = {100}
-                />
-            /*
            /* <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
                 timeout = {this.props.duration + this.props.delay}>  */
-            /*<div className = 'grid'>
+            <div className = 'grid'>
                 {rowLines}
                 {colLines}
-            </div>  */
+            </div> 
             /*</CSSTransition> 
             */
         );
@@ -72,11 +64,11 @@ class Grid extends React.Component {
 }
 
 Grid.defaultProps = {
-    numLinesRow: 15,
-    numLinesCol: 23,
+    numLinesRow: 2,
+    numLinesCol: 2,
     offset: 0,
     duration: 1000,
-    delay: 2000
+    delay: 1000
 };
 
 export default Grid;

@@ -43,7 +43,7 @@ class Gridline extends React.Component{
                         in = {this.state.hasPopped}
                         appear = {true}
                         classNames = {`line-${this.props.lineType}`}
-                        timeout={1000}
+                        timeout={2000}
                         >
                             <div 
                                 className = "line"
