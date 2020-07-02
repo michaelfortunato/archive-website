@@ -5,6 +5,10 @@ import { CSSTransition } from 'react-transition-group'
 
 
 class Grid extends React.Component {
+    constructor(props){
+        super(props);
+        this.totalGridlineDuration = 0;
+    }
     randn_bm(mu, sigma) {
         var u = 0, v = 0;
         while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
@@ -21,11 +25,15 @@ class Grid extends React.Component {
         let lineType = isRow ? 'row' : 'col';
         let lines = [];
 
+
         for (let i = 1; i <= numLines; i++) {
             ruledPos = offset + i * spacing;
             offsetPos = Math.random() * 100;
             duration =  100 + Math.random() * this.props.duration;
-            delay = 700 + Math.random() * this.props.delay;
+            delay = 1000 + Math.random() * this.props.delay;
+
+            this.totalGridlineDuration = Math.max(this.totalGridlineDuration, duration + delay);
+
             lines.push(
                 <Gridline 
                     key = {i + i*isRow}
@@ -51,8 +59,8 @@ class Grid extends React.Component {
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
-                timeout = {this.props.duration + this.props.delay}>
-            <div className = 'grid' style = {{transitionDelay: `${300 + this.props.duration + this.props.delay}ms`}}>
+                timeout = {this.totalGridlineDuration}>
+            <div className = 'grid' style = {{transitionDelay: `${this.totalGridlineDuration}ms`}}>
                 {rowLines}
                 {colLines}
             </div>  
@@ -66,7 +74,7 @@ Grid.defaultProps = {
     numLinesCol: 23,
     offset: 0,
     duration: 1000,
-    delay: 2000
+    delay: 3000
 };
 
 export default Grid;
