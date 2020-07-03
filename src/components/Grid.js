@@ -40,7 +40,7 @@ class Grid extends React.Component {
             y = isRow ? ruledPos: floatingPos;
             
             duration = 500 + this.props.avgDuration * Math.random();
-            delay = 1000 + this.props.avgDuration * Math.random() //this.randn_bm(this.props.avgDelay , 400);
+            delay = 1000 + this.props.avgDelay * Math.random() //this.randn_bm(this.props.avgDelay , 400);
       
             this.totalGridlineDuration = Math.max(this.totalGridlineDuration, duration + delay);
 
@@ -92,8 +92,8 @@ Grid.defaultProps = {
     numLinesRow: 16,
     numLinesCol: 23,
     offset: 0,
-    avgDuration: 1000,
-    avgDelay: 2500
+    avgDuration: 500,
+    avgDelay: 3000
 };
 
 export default Grid;
