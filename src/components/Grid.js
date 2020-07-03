@@ -70,18 +70,17 @@ class Grid extends React.Component {
             
 
         return(
-            /*<CSSTransition
+            <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
                 timeout = {this.gridTimout}
-                \\style = {{transitionDelay: `${this.totalGridlineDuration + 500}ms`}}>
-                > */
-                <div className = 'grid' > 
+                >
+                <div className = 'grid' style = {{transitionDelay: `${this.totalGridlineDuration + 500}ms`}}> > 
                     {rowLines}
                     {colLines}
                 </div>  
-           /* </CSSTransition>*/
+           </CSSTransition>
             
         );
     }
