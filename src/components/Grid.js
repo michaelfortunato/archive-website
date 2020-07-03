@@ -73,8 +73,8 @@ class Grid extends React.Component {
 }
 
 Grid.defaultProps = {
-    numLinesRow: 2,
-    numLinesCol: 2,
+    numLinesRow: 5,
+    numLinesCol: 5,
     offset: 0,
     duration: 1000,
     delay: 1000
