@@ -120,9 +120,7 @@
 }
 */
 
-.hero {
 
-}
 
 .grid{
     position: absolute;
@@ -224,3 +222,26 @@
 }
 
 
+.hero {
+    height:75vh;
+    width: 100vw;
+}
+.name{
+    font-family: Helvetica, Arial, sans-serif;
+}
+.letter{
+    color: white;
+}
+
+.letter-appear{
+    color: white;
+}
+.letter-appearing{
+    transform: translateX(0%) translateY(0%);
+    transition: transform;
+
+}
+.letter-appear-done{
+    transform: translateX(0%) translateY(0%);;
+
+}

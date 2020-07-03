@@ -5,14 +5,16 @@ import './css/materialize.css'
 
 import Grid from './components/Grid.js'
 import Navbar from './components/Navbar.js'
+import HomeAnime from './components/HomeAnime.js'
 
 class App extends React.Component{
     render() {
         return (
             <div id = 'App'>
                 <Navbar />
+                <HomeAnime />
                 
-                <Grid />
+              
             </div>
         )
     }
