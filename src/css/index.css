@@ -162,6 +162,8 @@
     left: 0% !important;
     border-radius: 0%;
     transition-property: left, width, border-radius, height;
+    transition-duration: 1000ms !important;
+    transition-delay: 0ms !important;
 }
 .line-row-appear-done{
     height: 1px;
@@ -181,6 +183,8 @@
     top: 0% !important;
     border-radius: 0%;
     transition: top, height, border-radius, width;
+    transition-duration: 1000ms !important;
+    transition-delay: 0ms !important;
     
 }
 

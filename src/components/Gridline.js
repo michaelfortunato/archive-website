@@ -15,7 +15,7 @@ class Gridline extends React.Component{
             this.style = {'left': `${this.props.ruledPos}%`,
                             'top': `${this.props.offsetPos}%`};
         }
-        this.style.transitionDuration = `${this.props.duration}ms`;
+        this.style.transitionDuration = `800ms`;
         this.style.transitionDelay = `${this.props.delay}ms`;
         this.totalTime = this.props.duration + this.props.delay;
     }
@@ -44,7 +44,7 @@ class Gridline extends React.Component{
                         in = {this.state.hasPopped}
                         appear = {true}
                         classNames = {`line-${this.props.lineType}`}
-                        timeout= {this.totalTime }
+                        timeout= {1000}
                         >
                             <div 
                                 className = "line"

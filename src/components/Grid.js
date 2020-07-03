@@ -73,11 +73,11 @@ class Grid extends React.Component {
 }
 
 Grid.defaultProps = {
-    numLinesRow: 5,
-    numLinesCol: 5,
+    numLinesRow: 23,
+    numLinesCol: 17,
     offset: 0,
     duration: 1000,
-    delay: 1000
+    delay: 3000
 };
 
 export default Grid;
