@@ -8,27 +8,24 @@ class Gridline extends React.Component{
             showGridline: true, 
             hasEntered: false
         };
-        this.style = this.setStyle()
-        this.timeout = this.props.timing.duration + this.props.timing.delay
-        console.log(this.props.timing.delay);
-    }
-    setStyle() {
-        let dur = this.props.timing.duration;
-        let del = this.props.timing.delay;
-        let style = {'left': `${this.props.position.x}%`,
-                    'top': `${this.props.position.y}%`,
-                    'transitionDuration': `${dur}ms`, 
-                    'transitionDelay': `${del}ms`
-                    };
-        return style;
+        if (this.props.lineType === 'row') {
+            this.style = {'top': `${this.props.ruledPos}%`,
+                            'left': `${this.props.offsetPos}%`, 
+                        };
+        } else {
+            this.style = {'left': `${this.props.ruledPos}%`,
+                            'top': `${this.props.offsetPos}%`};
+        }
+        this.style.transitionDuration = `${this.props.duration}ms`;
+        this.style.transitionDelay = `${this.props.delay}ms`;
     }
     render(){
         return( 
                 <CSSTransition
                 in = {true}
                 appear = {true}
-                classNames = {`dotline-${this.props.lineType}`}
-                timeout={this.timeout}
+                classNames = {`line-${this.props.lineType}`}
+                timeout={this.props.duration + this.props.delay}
                 >
                         <div 
                             className = "line"
