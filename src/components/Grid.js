@@ -6,50 +6,52 @@ import { CSSTransition } from 'react-transition-group'
 const fadeDuration = 1000;
 
 class Grid extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.totalGridlineDuration = 0;
-        this.toggleEntered = this.toggleEntered.bind(this)
-        this.state = {
-            hasEntered: false
-        };   
     }
 
-    toggleEntered(){
-        this.setState(
-            {hasEntered: !this.hasEntered}
-        )
+    randn_bm(mu, sigma) {
+        let u = 0, v = 0;
+        while(u === 0) u = Math.random();
+        while(v === 0) v = Math.random();
+        return (mu + sigma * Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v ));
     }
 
     renderLines(numLines, offset, isRow) {
+        let key;
+        let lineType = isRow ? 'row' : 'col';
+        let x;
+        let y;
+        let duration;
+        let delay;
 
         let ruledPos;
         let floatingPos;
-        let position = {};
-        let timing = {};
-
         let spacing = Math.floor(100/numLines);
-        let lineType = isRow ? 'row' : 'col';
         let lines = [];
-        let hello;
-        let goodbye;
+
+
         for (let i = 1; i <= numLines; i++) {
+            key = i + this.props.numLinesCol*isRow
             ruledPos = this.props.offset + i * spacing;
             floatingPos = 100 *  Math.random();
-            position = {
-                x: isRow ? floatingPos: ruledPos, 
-                y: isRow ? ruledPos: floatingPos
-            };
+            x = isRow ? floatingPos: ruledPos;
+            y = isRow ? ruledPos: floatingPos;
+            
+            duration = this.randn_bm(this.props.avgDuration, 400);
+            delay = 1000 + + this.randn_bm(this.props.avgDelay, 1000);
       
-    
-            this.maxGridlineDuration = Math.max(this.maxGridlineDuration, timing.duration + timing.delay);
+            this.totalGridlineDuration = Math.max(this.totalGridlineDuration, duration + delay);
 
             lines.push(
                 <Gridline 
-                    key = {i + i*isRow}
+                    key = {key}
                     lineType = {lineType} 
-                    position = {position}
-                    timing = {{duration: 1000, delay: 2000 * Math.random() }}
+                    x = {x}
+                    y = {y}
+                    duration = {duration}
+                    delay = {delay}
                 />
             );
         }                  
@@ -63,33 +65,22 @@ class Grid extends React.Component {
         let colLines = this.renderLines(this.props.numLinesCol,
                                         this.props.offset,
                                         0);
-        this.gridTimout = this.maxGridlineDuration + fadeDuration;
+
+        this.gridTimout = this.totalGridlineDuration + fadeDuration;
             
-            /*
-           let position = {x: 25, y: 50};
-           let timing = {duration: 1000, delay: 1000};
-           */
 
         return(
-            /*
-            <Gridline 
-                    key = {1}
-                    lineType = {'row'} 
-                    position = {position}
-                    timing = {timing}
-                />*/
-            /*
             <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
-                timeout = { this.gridTimout}
-                > */
-            <div className = 'grid' >
-                
-                {colLines}
-            </div>  
-           // </CSSTransition>
+                timeout = {this.gridTimout}
+                > 
+                <div className = 'grid' style = {{transitionDelay: `${this.totalGridlineDuration + 500}ms`}}>
+                    {rowLines}
+                    {colLines}
+                </div>  
+            </CSSTransition>
             
         );
     }
@@ -100,8 +91,8 @@ Grid.defaultProps = {
     numLinesRow: 15,
     numLinesCol: 23,
     offset: 0,
-    duration: 1000,
-    delay: 1500
+    avgDuration: 1000,
+    avgDelay: 1000
 };
 
 export default Grid;
