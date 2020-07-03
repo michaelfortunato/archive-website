@@ -3,78 +3,105 @@ import Gridline from './Gridline.js';
 import { CSSTransition } from 'react-transition-group'
 
 
+const fadeDuration = 1000;
 
 class Grid extends React.Component {
     constructor(props){
         super(props);
         this.totalGridlineDuration = 0;
+        this.toggleEntered = this.toggleEntered.bind(this)
+        this.state = {
+            hasEntered: false
+        };   
     }
-    randn_bm(mu, sigma) {
-        var u = 0, v = 0;
-        while(u === 0) u = Math.random(); //Converting [0,1) to (0,1)
-        while(v === 0) v = Math.random();
-        return (mu + sigma * Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v ));
+
+    toggleEntered(){
+        this.setState(
+            {hasEntered: !this.hasEntered}
+        )
     }
+
     renderLines(numLines, offset, isRow) {
+
         let ruledPos;
-        let offsetPos;
-        let duration; 
-        let delay;
+        let floatingPos;
+        let position = {};
+        let timing = {};
 
         let spacing = Math.floor(100/numLines);
         let lineType = isRow ? 'row' : 'col';
         let lines = [];
-
-
+        let hello;
+        let goodbye;
         for (let i = 1; i <= numLines; i++) {
-            ruledPos = offset + i * spacing;
-            offsetPos = Math.random() * 100;
-            duration =  100 + Math.random() * this.props.duration;
-            delay = 1000 + Math.random() * this.props.delay;
-
-            this.totalGridlineDuration = Math.max(this.totalGridlineDuration, duration + delay);
+            ruledPos = this.props.offset + i * spacing;
+            floatingPos = 100 *  Math.random();
+            position = {
+                x: isRow ? floatingPos: ruledPos, 
+                y: isRow ? ruledPos: floatingPos
+            };
+      
+    
+            this.maxGridlineDuration = Math.max(this.maxGridlineDuration, timing.duration + timing.delay);
 
             lines.push(
                 <Gridline 
                     key = {i + i*isRow}
                     lineType = {lineType} 
-                    offsetPos = {offsetPos} 
-                    ruledPos = {ruledPos}
-                    duration = {duration}
-                    delay = {delay}
+                    position = {position}
+                    timing = {{duration: 1000, delay: 2000 * Math.random() }}
                 />
             );
         }                  
         return lines;
     }
     render() {
+        
         let rowLines = this.renderLines(this.props.numLinesRow,
                                         this.props.offset,
                                         1);
         let colLines = this.renderLines(this.props.numLinesCol,
                                         this.props.offset,
                                         0);
+        this.gridTimout = this.maxGridlineDuration + fadeDuration;
+            
+            /*
+           let position = {x: 25, y: 50};
+           let timing = {duration: 1000, delay: 1000};
+           */
+
         return(
+            /*
+            <Gridline 
+                    key = {1}
+                    lineType = {'row'} 
+                    position = {position}
+                    timing = {timing}
+                />*/
+            /*
             <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
-                timeout = {this.totalGridlineDuration}>
-            <div className = 'grid' style = {{transitionDelay: `${this.totalGridlineDuration}ms`}}>
-                {rowLines}
+                timeout = { this.gridTimout}
+                > */
+            <div className = 'grid' >
+                
                 {colLines}
             </div>  
-            </CSSTransition>
+           // </CSSTransition>
+            
         );
     }
 }
+
 
 Grid.defaultProps = {
     numLinesRow: 15,
     numLinesCol: 23,
     offset: 0,
     duration: 1000,
-    delay: 3000
+    delay: 1500
 };
 
 export default Grid;
