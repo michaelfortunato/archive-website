@@ -10,7 +10,6 @@ class Navbar extends React.Component {
         this.state = {isVisible: false};
     }
     render() {
-        console.log('clicked');
         return(
             <div className = 'navbar'>
                 <div className = 'nav-open-button large material-icons'
