@@ -14,7 +14,7 @@ class Letter extends React.Component {
     }
     render(){
         return(
-            <span className = 'letter center-align'>
+            <span className = 'letter' style = {{top: '50%'}}>
                 {this.props.letter}
             </span>
         );

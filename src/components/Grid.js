@@ -3,6 +3,8 @@ import Gridline from './Gridline.js';
 import { CSSTransition } from 'react-transition-group'
 
 
+const winHeight = window.innerHeight;
+const winWidth = window.innerWidth;
 const fadeDuration = 1000;
 
 class Grid extends React.Component {
@@ -18,7 +20,7 @@ class Grid extends React.Component {
         return (mu + sigma * Math.sqrt( -2.0 * Math.log( u ) ) * Math.cos( 2.0 * Math.PI * v ));
     }
 
-    renderLines(numLines, offset, isRow) {
+    renderLines(spacing, offset, isRow) {
         let key;
         let lineType = isRow ? 'row' : 'col';
         let x;
@@ -28,12 +30,14 @@ class Grid extends React.Component {
 
         let ruledPos;
         let floatingPos;
-        let spacing = Math.floor(100/numLines);
+        let numLines = Math.floor(100/spacing);//isRow ? Math.floor(winHeight/spacing): Math.floor(winWidth/spacing);
+        console.log(numLines);
+        console.log(winWidth);
         let lines = [];
 
 
         for (let i = 1; i <= numLines; i++) {
-            key = i + this.props.numLinesCol*isRow
+            key = i;
             ruledPos = this.props.offset + i * spacing;
             floatingPos = 100 *  Math.random();
             x = isRow ? floatingPos: ruledPos;
@@ -58,11 +62,11 @@ class Grid extends React.Component {
         return lines;
     }
     render() {
-        
-        let rowLines = this.renderLines(this.props.numLinesRow,
+        let spacing = 6;
+        let rowLines = this.renderLines(spacing,
                                         this.props.offset,
                                         1);
-        let colLines = this.renderLines(this.props.numLinesCol,
+        let colLines = this.renderLines(spacing,
                                         this.props.offset,
                                         0);
 
@@ -70,29 +74,27 @@ class Grid extends React.Component {
             
 
         return(
-            <CSSTransition
+           /*<CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
                 timeout = {this.gridTimout}
                 onEntered = {this.props.setGridEntered}
-                >
+                >*/
                 <div className = 'grid' style = {{transitionDelay: `${this.totalGridlineDuration + 500}ms`}}> 
                     {rowLines}
                     {colLines}
                 </div>  
-           </CSSTransition>
+           //</CSSTransition>
         );
     }
 }
 
 
 Grid.defaultProps = {
-    numLinesRow: 16,
-    numLinesCol: 23,
     offset: 0,
     avgDuration: 300,
-    avgDelay: 2200
+    avgDelay: 1800
 };
 
 export default Grid;

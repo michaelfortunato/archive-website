@@ -1,3 +1,6 @@
+html {
+   font-size: 25%;
+}
 #App{
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
@@ -227,9 +230,18 @@
     width: 100vw;
 }
 .name{
+    display: flex;
+    height: 50%;
+    width: 100%;
     font-family: Helvetica, Arial, sans-serif;
+    font-size: 7vh;
+    align-items: center;
+    justify-content: center;
 }
+
 .letter{
+    position: relative;
+    margin: 5px;
     color: white;
 }
 

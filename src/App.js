@@ -3,9 +3,9 @@ import React from 'react'
 import './css/index.css'
 import './css/materialize.css'
 
-import Grid from './components/Grid.js'
 import Navbar from './components/Navbar.js'
 import HomeAnime from './components/HomeAnime.js'
+
 
 class App extends React.Component{
     render() {
@@ -14,7 +14,6 @@ class App extends React.Component{
                 <Navbar />
                 <HomeAnime />
                 
-              
             </div>
         )
     }
