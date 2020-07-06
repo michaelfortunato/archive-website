@@ -9,6 +9,9 @@ html {
     
 }
 
+
+
+
 .navbar{
     width: 100%;
     height: 25%;
@@ -87,6 +90,7 @@ html {
     opacity: 1;
 }
 */
+
 
 .fade-out-enter{
     opacity: 1;
@@ -229,31 +233,7 @@ html {
     height:75vh;
     width: 100vw;
 }
-.name{
-    display: flex;
-    height: 50%;
-    width: 100%;
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 7vh;
-    align-items: center;
-    justify-content: center;
-}
 
-.letter{
-    position: relative;
-    margin: 5px;
-    color: white;
-}
 
-.letter-appear{
-    color: white;
-}
-.letter-appearing{
-    transform: translateX(0%) translateY(0%);
-    transition: transform;
 
-}
-.letter-appear-done{
-    transform: translateX(0%) translateY(0%);;
 
-}

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Grid from './Grid.js'
 import { CSSTransition } from 'react-transition-group';
-import Name from './Name.js'
+import  Name from './Name.js'
 
 class HomeAnime extends React.Component {
     constructor(props){
@@ -26,7 +26,9 @@ class HomeAnime extends React.Component {
                         {/*Triangle Here */}
                         dsf
                     </div>
-                    <Name />
+                    <div className = 'valign-wrapper col s6'>
+                    <Name name = 'Michael Fortunato'/>
+                    </div>
                     <div className = 'col s3'>
                         dsfsd
                     </div>

@@ -1,23 +1,48 @@
 import React from 'react'
-import { CSSTransition } from 'react-transition-group';
+import  styled  from 'styled-components';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-class Letter extends React.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            hasEntered: true
-        };
-        this.style = {
-            'transfrom': `translateX(${this.props.x}%) translateY(${this.props.y}%)`,
-            'transitionDuration': `${this.props.duration}ms`
-        };
+
+const StyledLetter = styled.span`
+    color: white;
+    position: relative;
+    margin: 5px;
+    
+
+    &.letter-appear{
+        transform: translate(${(props) => props.XOffset}%, ${(props) => props.YOffset}%); 
     }
-    render(){
-        return(
-            <span className = 'letter' style = {{top: '50%'}}>
-                {this.props.letter}
-            </span>
-        );
+    
+    &.letter-appear-active{
+        transform: translate(0, 0) ;
+        transition: transform;
+        transition-duration: ${(props) => props.duration}ms;
+        transition-delay: ${(props) => props.duration}ms;
+    
     }
+    &.letter-appear-done{
+        transform: translate(0, 0);
+    
+    }
+
+    
+`;
+const Letter = (props) => {
+    return (
+        <CSSTransition
+            appear = {true} 
+            in = {true}
+            classNames = 'letter'
+            timeout = {props.duration + props.delay}>
+            <StyledLetter 
+                key = {1}
+                XOffset = {props.XOffset}
+                YOffset = {props.YOffset}
+                duration = {props.duration}
+                delay = {props.delay} >
+                {props.char}
+            </StyledLetter>
+        </CSSTransition>
+    );
 }
-export default Letter;
+export {Letter, StyledLetter}
