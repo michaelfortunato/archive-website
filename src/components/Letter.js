@@ -10,7 +10,7 @@ const StyledLetter = styled.span`
     
 
     &.letter-appear{
-        transform: translate(${(props) => props.XOffset}%, ${(props) => props.YOffset}%); 
+        transform: translate(${(props) => props.XOffset}vw, ${(props) => props.YOffset}vh); 
     }
     
     &.letter-appear-active{

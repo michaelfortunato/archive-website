@@ -1,7 +1,8 @@
 import React from 'react'
 import { CSSTransition } from 'react-css-transition';
-import { Letter, StyledLetter } from './Letter.js'
 import  styled  from 'styled-components';
+import { Letter, StyledLetter } from './Letter.js'
+
 
 
 
@@ -19,11 +20,40 @@ const StyledName = styled.div`
 
 const Name = (props) => {
     let [firstName, lastName] = props.name.split(" ");
+    
     return (
         <StyledName>
             <Letter
-                char = {'L'}
-                XOffset = {-50}
+                char = {'M'}
+                XOffset = {25}
+                YOffset = {-75}
+                duration = {500}
+                delay = {1000}>
+            </Letter>
+            <Letter
+                char = {'M'}
+                XOffset = {25}
+                YOffset = {-75}
+                duration = {500}
+                delay = {1000}>
+            </Letter>
+            <Letter
+                char = {'M'}
+                XOffset = {25}
+                YOffset = {-75}
+                duration = {500}
+                delay = {1000}>
+            </Letter>
+            <Letter
+                char = {'M'}
+                XOffset = {25}
+                YOffset = {-75}
+                duration = {500}
+                delay = {1000}>
+            </Letter>
+            <Letter
+                char = {'M'}
+                XOffset = {25}
                 YOffset = {-75}
                 duration = {1000}
                 delay = {1000}>
