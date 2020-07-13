@@ -17,7 +17,8 @@ const StyledLetter = styled.span`
         transform: translate(0, 0) ;
         transition: transform;
         transition-duration: ${(props) => props.duration}ms;
-        transition-delay: ${(props) => props.duration}ms;
+        transition-delay: ${(props) => props.delay}ms;
+        transition-easing-function: ease-in-out;
     
     }
     &.letter-appear-done{
@@ -35,7 +36,7 @@ const Letter = (props) => {
             classNames = 'letter'
             timeout = {props.duration + props.delay}>
             <StyledLetter 
-                key = {1}
+                key = {props.id}
                 XOffset = {props.XOffset}
                 YOffset = {props.YOffset}
                 duration = {props.duration}

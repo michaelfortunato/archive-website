@@ -21,13 +21,13 @@ class HomeAnime extends React.Component {
         return(
             <div>
             <Grid setGridEntered = {this.setGridEntered}/>
-                <div className = 'hero row valign-wrapper'>
+                <div className = 'hero row '>
                     <div className = 'col s3'>
                         {/*Triangle Here */}
                         dsf
                     </div>
                     <div className = ' col s6'>
-                    <Name name = 'Michael Fortunato'/>
+                    <Name firstName = 'Michael' lastName = 'Fortunato'/>
                     </div>
                     <div className = 'col s3'>
                         dsfsd
