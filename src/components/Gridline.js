@@ -5,11 +5,10 @@ import { CSSTransition } from 'react-transition-group';
 const StyledGridline = styled.div`
     position: absolute;
     background:#6699CC;
+
     left: ${(props) => props.isRow ? props.floatingPos : props.fixedPos}%;
     top: ${(props) => props.isRow ? props.fixedPos : props.floatingPos}%;
-    
-    height: ${(props) => props.isDot ? '10px': '0px'};
-    width: ${(props) => props.isDot ? '10px': '0px'};
+
     
     border-radius: ${(props) => props.isDot ? '50%': '0%'};
     &.line-appear, &.line-enter {
@@ -31,6 +30,7 @@ const StyledGridline = styled.div`
         transition-property: top, left, width, border-radius, height;
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms;
+        will-change: transition;
     }
     &.line-appear-done, &.line-enter-done{
         height: ${(props) => props.isRow ? '1px': '100%'};

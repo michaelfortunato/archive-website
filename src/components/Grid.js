@@ -47,7 +47,7 @@ const Grid = (props) => {
 
         lines.push(<Gridline {...{key: key, ...pos_conf, ...time_conf, isRow: false, isDot: props.isDot}} />)
     }
-        return (<div className = 'grid'> {lines}</div>);
+        return (<div className> {lines}</div>);
 }
 /*
 

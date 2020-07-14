@@ -11,7 +11,7 @@ const HomeAnime = (props) => {
         spacing: 5,
         offset: 0,
         avgDuration: 800,
-        avgDelay: 2200,
+        avgDelay: 2700,
         isDot: 1,
     };
     return (<Grid {...defaultProps}/>);
