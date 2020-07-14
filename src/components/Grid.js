@@ -33,17 +33,21 @@ const Grid = (props) => {
     
 
     /* Row first, so X floats */
-    for(let i = 1; i <= 2*numLines; i++) {
+    for(let i = 1; i <= numLines; i++) {
         pos_conf = position(i, props.spacing, props.offset, props.random);
-        time_conf = timing(i, props.avgDuration, props.avgDelay, props.random);
-        isRow = (i <= numLines) ? true : false;
-        key = i + (numLines * (isRow ? 0: 1));
+        time_conf = timing(props.avgDuration, props.avgDelay, props.random);
+        key = i ;
 
-        console.log({...pos_conf, ...time_conf, isRow: isRow});
-
-        lines.push(<Gridline {...{key: key, ...pos_conf, ...time_conf, isRow: isRow, isDot: props.isDot}} />)
+        lines.push(<Gridline {...{key: key, ...pos_conf, ...time_conf, isRow: true, isDot: props.isDot}} />)
     } 
-    return (<div className = 'grid'> {lines}</div>);
+    for(let i = 1; i <= numLines; i++) {
+        pos_conf = position(i, props.spacing, props.offset, props.random);
+        time_conf = timing(props.avgDuration, props.avgDelay, props.random);
+        key = i + numLines;
+
+        lines.push(<Gridline {...{key: key, ...pos_conf, ...time_conf, isRow: false, isDot: props.isDot}} />)
+    }
+        return (<div className = 'grid'> {lines}</div>);
 }
 /*
 
