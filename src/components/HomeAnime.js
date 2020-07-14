@@ -4,6 +4,21 @@ import Grid from './Grid.js'
 import { CSSTransition } from 'react-transition-group';
 import  Name from './Name.js'
 
+
+const HomeAnime = (props) => {
+    let defaultProps = {
+        random: 1,
+        spacing: 7,
+        offset: 0,
+        avgDuration: 3000,
+        avgDelay: 1000,
+        isDot: true,
+    };
+    return (<Grid {...defaultProps}/>);
+}
+
+
+/*
 class HomeAnime extends React.Component {
     constructor(props){
         super(props);
@@ -20,10 +35,10 @@ class HomeAnime extends React.Component {
     render(){
         return(
             <div>
-            <Grid setGridEntered = {this.setGridEntered}/>
+            <Grid />
                 <div className = 'hero row '>
                     <div className = 'col s3'>
-                        {/*Triangle Here */}
+                        {Triangle Here }
                         dsf
                     </div>
                     <div className = ' col s6'>
@@ -37,5 +52,5 @@ class HomeAnime extends React.Component {
         );
     }
 }
-
+*/
 export default HomeAnime;

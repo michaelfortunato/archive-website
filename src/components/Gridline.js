@@ -2,53 +2,52 @@ import React from 'react';
 import  styled  from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 
-const SytledGridline = styled.div`
+const StyledGridline = styled.div`
     position: absolute;
     background:#6699CC;
-    border-radius: ${(props) => props.isDot ? '50%': '0%'}
+    
 
-
-    &.line-row-appear{
-        height: 10px;
-        width: 10px;
-        border-radius: inherit;
+    &.line-appear, &.line-enter, {
+        left: ${(props) => props.isRow ? props.floatingPos : props.fixedPos}%;
+        top: ${(props) => props.isRow ? props.fixedPos : props.floatingPos}}%;
+        height: ${(props) => props.isDot ? '10px': '0px'};
+        width: ${(props) => props.isDot ? '10px': '0px'};
+        border-radius: ${(props) => props.isDot ? '50%': '0%'};
     }
-    &.line-row-appear-active{
-        height: 1px;
-        width: 100%;
+    
+    &.line-appear-active, &.line-enter-actice {
+        height: ${(props) => props.isRow ? '1px': '100%'};
+        width:  ${(props) => props.isRow ? '100%': '1px'};
         left: 0% !important;
         border-radius: 0%;
+
         transition-property: left, width, border-radius, height;
+        transition-duration: ${(props) => props.duration}ms; 
+        transition-delay: ${(props) => props.delay}ms;
     }
-    &.line-row-appear-done{
-        height: 1px;
-        width: 100%;
+    &.line-appear-done, &.line-enter-done{
+        height: ${(props) => props.isRow ? '1px': '100%'};
+        width:  ${(props) => props.isRow ? '100%': '1px'};
         left:0% !important;
         border-radius: 0%;
     }
-    &.line-col-appear{
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-    }
-    &.line-col-appear-active{
-        height: 100%;
-        width: 1px;
-        top: 0% !important;
-        border-radius: 0%;
-        transition: top, height, border-radius, width;
-        
-    }
-    &.line-col-appear-done{
-        height: 100%;
-        width: 1px;
-        top: 0% !important;
-        border-radius: 0%;
-
-    }
-`
+`;
 
 
+const Gridline = (props) => {
+    return(
+        <CSSTransition
+        in = {true}
+        appear = {true}
+        classNames = "line"
+        timeout={props.duration + props.delay}>
+            <StyledGridline 
+               {...props}
+            />
+        </CSSTransition>   
+    );
+};
+/*
 
 class Gridline extends React.Component{
     constructor(props){
@@ -76,5 +75,6 @@ class Gridline extends React.Component{
         );
     }
 }
+*/
 
 export default Gridline;

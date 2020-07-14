@@ -1,11 +1,52 @@
 import React from 'react'
-import Gridline from './Gridline.js';
 import { CSSTransition } from 'react-transition-group'
 
+import Gridline from './Gridline.js';
 
-const winHeight = window.innerHeight;
-const winWidth = window.innerWidth;
-const fadeDuration = 1000;
+
+const position = (i, spacing, offset, random) => {
+    let fixedPos = offset + spacing * i;
+    let floatingPos = 100 * (random ? Math.random(): 0);
+    return {fixedPos: fixedPos, floatingPos: floatingPos};
+}
+
+const timing = (avgDuration, avgDelay, random) => {
+    let duration = 200 + avgDuration * (random ?  Math.random() : 1);
+    let delay = avgDelay * (random ?  Math.random() : 1);
+    return {duration: duration, delay, delay};
+}
+
+
+  
+
+
+const Grid = (props) => {
+    /* Build Configurations */
+    let lines = [];
+    let numLines = Math.floor(100/props.spacing);
+    
+    let pos_conf;
+    let time_conf;
+    let isRow;
+    let key;
+
+    
+
+    /* Row first, so X floats */
+    for(let i = 1; i <= 2*numLines; i++) {
+        pos_conf = position(i, props.spacing, props.offset, props.random);
+        time_conf = timing(i, props.avgDuration, props.avgDelay, props.random);
+        isRow = (i <= numLines) ? true : false;
+        key = i + (numLines * (isRow ? 0: 1));
+
+        console.log({...pos_conf, ...time_conf, isRow: isRow});
+
+        lines.push(<Gridline {...{key: key, ...pos_conf, ...time_conf, isRow: isRow, isDot: props.isDot}} />)
+    } 
+    return (<div className = 'grid'> {lines}</div>);
+}
+/*
+
 
 class Grid extends React.Component {
     constructor(props) {
@@ -51,9 +92,9 @@ class Grid extends React.Component {
             lines.push(
                 <Gridline 
                     key = {key}
-                    lineType = {lineType} 
-                    x = {x}
-                    y = {y}
+                    lineType = {isRow} 
+                    x = {1}
+                    y = {1}
                     duration = {duration}
                     delay = {delay}
                 />
@@ -74,23 +115,33 @@ class Grid extends React.Component {
             
 
         return(
-           /*<CSSTransition
+           <CSSTransition
                 in = {true}
                 appear = {true}
                 classNames = 'fade-out'
                 timeout = {this.gridTimout}
                 onEntered = {this.props.setGridEntered}
                 style = {{transitionDelay: `${this.totalGridlineDuration}ms`}}> 
-                >*/
+                
+                <Gridline 
+                key = {1}
+                lineType = {0} 
+                x = {1}
+                y = {1}
+                duration = {1000}
+                delay = {1000}
+            />
+            
                 <div className = 'grid' > 
                     {rowLines}
                     {colLines}
                 </div>  
-           //</CSSTransition>
+            
+           </CSSTransition>
         );
     }
 }
-
+*/
 
 Grid.defaultProps = {
     offset: 0,

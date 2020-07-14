@@ -138,13 +138,16 @@ html {
     z-index: 0;
 
 }
+/*
 .line{
     position: absolute;
     background:#6699CC;
 }
+*/
 
 
 /* DOTS: grid row loading animation */
+/*
 .dotline-row-appear{
     height: 10px;
     width: 10px;
@@ -163,6 +166,7 @@ html {
     left:0% !important;
     border-radius: 0%;
 }
+*/
 
 /* DOTS: grid col loading animation */
 .dotline-col-appear{
