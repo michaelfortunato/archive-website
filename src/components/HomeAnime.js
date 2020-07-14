@@ -8,10 +8,10 @@ import  Name from './Name.js'
 const HomeAnime = (props) => {
     let defaultProps = {
         random: 1,
-        spacing: 7,
+        spacing: 6,
         offset: 0,
-        avgDuration: 700,
-        avgDelay: 2000,
+        avgDuration: 600,
+        avgDelay: 2200,
         isDot: 1,
     };
     return (<Grid {...defaultProps}/>);
