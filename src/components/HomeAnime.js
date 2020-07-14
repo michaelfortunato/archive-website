@@ -8,9 +8,9 @@ import  Name from './Name.js'
 const HomeAnime = (props) => {
     let defaultProps = {
         random: 1,
-        spacing: 6,
+        spacing: 5,
         offset: 0,
-        avgDuration: 600,
+        avgDuration: 800,
         avgDelay: 2200,
         isDot: 1,
     };
