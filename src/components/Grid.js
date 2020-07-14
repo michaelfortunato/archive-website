@@ -88,10 +88,10 @@ class Grid extends React.Component {
 
 
 Grid.defaultProps = {
-    numLinesRow: 16,
-    numLinesCol: 23,
+    numLinesRow: 12,
+    numLinesCol: 12,
     offset: 0,
-    avgDuration: 300,
+    avgDuration: 700,
     avgDelay: 2200
 };
 
