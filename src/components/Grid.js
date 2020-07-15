@@ -11,7 +11,7 @@ const position = (i, spacing, offset, random) => {
 }
 
 const timing = (avgDuration, avgDelay, random) => {
-    let duration = 200 + avgDuration * (random ?  Math.random() : 1);
+    let duration = 330 + avgDuration * (random ?  Math.random() : 1);
     let delay = 200 + avgDelay * (random ?  Math.random() : 1);
     return {duration: duration, delay, delay};
 }

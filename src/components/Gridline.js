@@ -9,10 +9,12 @@ const StyledGridline = styled.div`
     left: ${(props) => props.isRow ? props.floatingPos : props.fixedPos}%;
     top: ${(props) => props.isRow ? props.fixedPos : props.floatingPos}%;
 
+    
 
     &.line-appear, &.line-enter {
         height: ${(props) => props.isDot ? '10px': '0px'};
         width: ${(props) => props.isDot ? '10px': '0px'};
+        
         border-radius: ${(props) => props.isDot ? '50%': '0%'};
     }
     
@@ -25,7 +27,7 @@ const StyledGridline = styled.div`
         
         border-radius: 0;
 
-        transition-property: top, left, width, border-radius, height;
+        transition-property: all;
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms;
         will-change: transition;
@@ -35,7 +37,7 @@ const StyledGridline = styled.div`
         width:  ${(props) => props.isRow ? '100%': '1px'};
         left: ${(props) => props.isRow ? '0% !important': ''};
         top: ${(props) => props.isRow ? '': '0% !important'};
-        border-radius: 0 ;
+        border-radius: 0;
     }
 `;
 

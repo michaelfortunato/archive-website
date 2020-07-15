@@ -10,7 +10,7 @@ const HomeAnime = (props) => {
         random: 1,
         spacing: 6,
         offset: 0,
-        avgDuration: 500,
+        avgDuration: 300,
         avgDelay: 2700,
         isDot: 1,
     };
