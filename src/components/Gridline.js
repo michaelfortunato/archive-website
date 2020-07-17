@@ -6,8 +6,8 @@ const StyledGridline = styled.div`
     position: absolute;
     background:#6699CC;
 
-    left: ${(props) => props.isRow ? props.floatingPos : props.fixedPos}%;
-    top: ${(props) => props.isRow ? props.fixedPos : props.floatingPos}%;
+    left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}px`};
+    top: ${(props) => props.isRow ? `${props.fixedPos}px` : `${props.floatingPos}%`};
 
     
 
