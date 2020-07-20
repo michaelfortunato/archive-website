@@ -1,56 +1,31 @@
-import React from 'react'
-
-import Grid from './Grid.js'
+import React, { useState }from 'react'
 import { CSSTransition } from 'react-transition-group';
-import  Name from './Name.js'
+import Grid from './Grid.js'
+import  Hero from './Hero.js'
+
+const defaultGridProps = {
+    random: true,
+    numLines: 16,
+    offset: 0,
+    avgDuration: 500,
+    avgDelay: 2300,
+    isDot: true,
+};
 
 
 const HomeAnime = (props) => {
-    let defaultProps = {
-        random: true,
-        spacing: 50,
-        offset: 0,
-        avgDuration: 120,
-        avgDelay: 5000,
-        isDot: true,
-    };
-    return (<Grid {...defaultProps}/>);
-}
+    const [isGridDone, setIsGridDone] = useState(false)
+    defaultGridProps.setIsGridDone = setIsGridDone;
 
 
-/*
-class HomeAnime extends React.Component {
-    constructor(props){
-        super(props);
-        this.setGridEntered = this.setGridEntered.bind(this);
-        //this.toggleNameEntered = this.toggleNameEntered.bind(this);
-        this.state = {
-            gridEntered: false, 
-            nameEntered: false
-        };
-    }
-    setGridEntered() {
-        this.setState({ gridEntered: true});
-    }
-    render(){
-        return(
-            <div>
-            <Grid />
-                <div className = 'hero row '>
-                    <div className = 'col s3'>
-                        {Triangle Here }
-                        dsf
-                    </div>
-                    <div className = ' col s6'>
-                    <Name firstName = 'Michael' lastName = 'Fortunato'/>
-                    </div>
-                    <div className = 'col s3'>
-                        dsfsd
-                    </div>
-                </div>
-            </div>
+
+    return(
+        <div>
+            <Grid  {...defaultGridProps} />
+            <Hero />
+
+        </div>
         );
-    }
 }
-*/
+
 export default HomeAnime;

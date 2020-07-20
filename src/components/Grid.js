@@ -1,6 +1,6 @@
 import React from 'react'
 import  styled  from 'styled-components';
-import { CSSTransition } from 'react-transition-group'
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import Gridline from './Gridline.js';
 
@@ -41,7 +41,7 @@ const randn_bm = () => {
 
 
 
-const MIN_DURATION = 200;
+const MIN_DURATION = 100;
 const MIN_DELAY = 500;
 
 const position = (i, spacing, offset, random) => {
@@ -61,42 +61,42 @@ const Grid = (props) => {
     /* Build Configurations */
     const w = window.innerWidth;
     const h = window.innerHeight;
-    let lines = [];
-    let numLines = Math.floor(w/props.spacing);
-    
+    let rowLines = [];
+    let colLines = [];
+    let spacing = Math.floor(100/props.numLines);
     /* Configuration Variables */
     let pos_conf;
     let time_conf;
-    let booleans;
+    let conf;
 
+    let totalTimeout = 0;
+    
     
 
-
     /* Row first, so X floats */
-    for(let i = 1; i <= numLines; i++) {
-        pos_conf = position(i, props.spacing, props.offset, props.random);
+    for(let i = 1; i <= props.numLines; i++) {
+        pos_conf = position(i, spacing, props.offset, props.random);
         time_conf = timing(props.avgDuration, props.avgDelay, props.random);
-        booleans = {isRow: true, isDot: props.isDot};
-
-        lines.push(<Gridline key = {i} {...{ ...pos_conf, ...time_conf, isRow: true, isDot: props.isDot}} />)
+        conf = { ...pos_conf, ...time_conf, key: i, isRow: true, isDot: props.isDot, setIsGridDone: props.setIsGridDone}
+        totalTimeout = Math.max(time_conf.duration + time_conf.delay, totalTimeout);
+        rowLines.push(<Gridline  {...conf} />)
     } 
-    for(let i = 1; i <= numLines; i++) {
-        pos_conf = position(i, props.spacing, props.offset, props.random);
+    /* Then column */
+    for(let i = 1; i <= w/h* props.numLines; i++) {
+        pos_conf = position(i, spacing, props.offset, props.random);
         time_conf = timing(props.avgDuration, props.avgDelay, props.random);
-       
-
-        lines.push(<Gridline {...{key: i + numLines, ...pos_conf, ...time_conf, isRow: false, isDot: props.isDot}} />)
+        conf = { ...pos_conf, ...time_conf, key: i, isRow: false, isDot: props.isDot, setIsGridDone: props.setIsGridDone}
+        totalTimeout = Math.max(time_conf.duration + time_conf.delay, totalTimeout);
+        colLines.push(<Gridline  {...conf} />)
     }
+    
+    setTimeout(() => props.setIsGridDone(true), 3000)
+    /* change the state after animation is complete */
         return (
-            /*
-            <CSSTransition
-                in = {true}
-                appear = {true}
-                classNames = 'fade-out'
-                timeout = {6000}>*/
-            <StyledGrid> {lines}</StyledGrid>
-        
-            //</CSSTransition>
+            <StyledGrid> 
+                {rowLines} 
+                {colLines} 
+            </StyledGrid> 
             );
 }
 
