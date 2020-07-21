@@ -90,12 +90,12 @@ const Grid = (props) => {
         colLines.push(<Gridline  {...conf} />)
     }
     
-    setTimeout(() => props.setIsGridDone(true), 3000)
+    //setTimeout(() => props.setIsGridDone(true), 3000)
     /* change the state after animation is complete */
         return (
             <StyledGrid> 
-                {rowLines} 
-                {colLines} 
+                <Gridline floatingPos = {20} fixedPos = {50} isRow = {true} delay= {1000} duration = {500}/>
+                
             </StyledGrid> 
             );
 }

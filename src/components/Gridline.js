@@ -4,38 +4,35 @@ import { CSSTransition } from 'react-transition-group';
 
 const StyledGridline = styled.div`
     position: absolute;
-    background:#6699CC;
+    background: #6699CC;
 
 
-    &.line-appear {
-        left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}vh`};
-        top: ${(props) => props.isRow ? `${props.fixedPos}vh` : `${props.floatingPos}%`};
-        height: ${(props) => props.isDot ? '10px': '0px'};
-        width: ${(props) => props.isDot ? '10px': '0px'};
-        
-        border-radius: ${(props) => props.isDot ? '50%': '0%'};
+    height: ${(props => props.isRow ? '.8vw' : '100vh')};
+    width: ${(props => props.isRow ? '100vw' : '.4vh')};
+    top: ${(props) => props.isRow ? `${props.fixedPos}%`:  'initial'};
+    left: ${(props) => props.isRow ? 'intial':  `${props.fixedPos}%`};
+    
+    transform-origin: ${(props) => props.isRow ? `${props.floatingPos}%` : '100%'}
+                      ${(props) => props.isRow ? '50%' : `${props.floatingPos}%`};
+
+    &.line-appear, &.line-enter {
+        border-radius: 50%;
+        transform: scaleX(.008);
     }
     
-    &.line-appear-active {
-        height: ${(props) => props.isRow ? '1px': '100%'};
-        width:  ${(props) => props.isRow ? '100%': '1px'};
+    &.line-appear-active, &.line-enter-active {
+        border-radius: 0%;
         
-        left: ${(props) => props.isRow ? '0% !important': ''};
-        top: ${(props) => props.isRow ? '': '0% !important'};
-        
-        border-radius: 0;
+        transform: scaleX(1) scaleY(.1);
 
-        transition-property: all;
         transition-duration: ${(props) => props.duration}ms; 
-        transition-delay: ${(props) => props.delay}ms;
-        will-change: transition;
+        transition-delay: ${(props) => props.delay}ms; 
+        transition-property: all;
     }
-    &.line-appear-done{
-        height: ${(props) => props.isRow ? '1px': '100%'};
-        width:  ${(props) => props.isRow ? '100%': '1px'};
-        left: ${(props) => props.isRow ? '0% !important': `${props.fixedPos}vh`};
-        top: ${(props) => props.isRow ? `${props.fixedPos}vh`: '0% !important'};
-        border-radius: 0;
+    &.line-appear-done, &.line-enter-done{
+    
+        transform: scaleX(1) scaleY(.1);
+    
     }
 `;
 
