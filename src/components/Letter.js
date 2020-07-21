@@ -10,19 +10,21 @@ const StyledLetter = styled.span`
 
     
 
-    &.letter-appear{
+    &.letter-appear {
         transform: translate(${(props) => props.XOffset}vw, ${(props) => props.YOffset}vh); 
     }
     
-    &.letter-appear-active{
-        transform: translate(0, 0) ;
-        transition: transform;
+    &.letter-appear-active {
+        transform: translate(0, 0);
+
+        transition-property: all;
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
-        transition-timing-function cubic-bezier(0.68, -0.6, 0.32, 1.6);
+       /* transition-timing-function cubic-bezier(0.68, -0.6, 0.32, 1.6);*/
+       will-change: all;
     
     }
-    &.letter-appear-done{
+    &.letter-appear-done {
         transform: translate(0, 0);
     
     }

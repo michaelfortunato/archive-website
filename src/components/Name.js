@@ -7,6 +7,10 @@ import { config } from 'react-transition-group';
 
 
 
+const randomArcPoint = (radius) => {
+    let theta = (2 * Math.random() * Math.PI);
+    return ({x: radius * Math.cos(theta), y: radius *Math.sin(theta) });
+}
 
 const StyledName = styled.div`
     position:relative;
@@ -14,7 +18,7 @@ const StyledName = styled.div`
     display: flex;
     width: 100%;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 5vw;
+    font-size: 50px;
     justify-content: center;
 
 `;
@@ -27,30 +31,28 @@ const Name = (props) => {
         return(
             
             <StyledName className = 'col s6'>
-            <StyledName>
             {firstName.map( (char, index) => {
                 config.id = index;
                 config.char = char;
-                config.XOffset = ((index % 2) == 0) ? 25 : -25;
-                config.YOffset = ((index % 2) == 0) ? -75 : 75;
-                config.duration = 700;
-                config.delay = 3000 + index * 1000;
+                config.XOffset = randomArcPoint(25).x;   //((index % 2) == 0) ?  : ;
+                config.YOffset = randomArcPoint(25).y; //((index % 2) == 0) ? -25 : 25;
+                config.duration = 500;
+                config.delay = 4000;
                 return (
                         <Letter {...config}/>
                     
                 );
             })}
-           </StyledName>
         
             
         
              {lastName.map( (char, index) => {
                 config.id = index
                 config.char = char;
-                config.XOffset = ((index % 2) == 0) ? 25 : -25;
-                config.YOffset = ((index % 2) == 0) ? -75 : 75;
-                config.duration = 400;
-                config.delay = 10000 + 3000 + index * 1000;
+                config.XOffset = randomArcPoint(25).y;// ((index % 2) == 0) ? 25 : -25;
+                config.YOffset = randomArcPoint(25).x;//((index % 2) == 0) ? -75 : 75;
+                config.duration = 500;
+                config.delay = 4000; 
                 return (
                         <Letter {...config}/>
                     

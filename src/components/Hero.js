@@ -8,7 +8,7 @@ const Hero = (props) => {
 
             <div className = 'hero row '>
                     <Triangle />
-                    <Name firstName = 'Michael ' lastName = 'Fortunato'/>
+                    <Name firstName = 'Michael ' lastName = 'Newman Fortunato'/>
                     <Triangle />
                 </div>
     );

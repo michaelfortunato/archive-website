@@ -40,7 +40,7 @@ const randn_bm = () => {
 
 
 
-const MIN_DURATION = 1000;
+const MIN_DURATION = 400;
 const MIN_DELAY = 1000;
 
 const position = (i, spacing, offset, random) => {
