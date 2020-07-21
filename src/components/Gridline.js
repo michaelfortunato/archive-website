@@ -19,8 +19,8 @@ const StyledGridline = styled.div`
 
     height: ${(props) => props.isRow ? `${circleSize}px` : '100%'};
     width: ${(props) => props.isRow ? '100%' : `${circleSize}px`};
-    top: ${(props) => props.isRow ? `${props.fixedPos}%`:  'initial'};
-    left: ${(props) => props.isRow ? 'initial':  `${props.fixedPos}%`};
+    top: ${(props) => props.isRow ? `${props.fixedPos}vh`:  'initial'};
+    left: ${(props) => props.isRow ? 'initial':  `${props.fixedPos}vh`};
     
     transform-origin: ${(props) => props.isRow ? `${props.floatingPos}%` : '50%'}
                         ${(props) => props.isRow ? '50%' : `${props.floatingPos}%`};
