@@ -6,15 +6,19 @@ import { CSSTransition } from 'react-transition-group';
 
     const w = window.innerWidth;
     const h = window.innerHeight;
+    const circleSize = 10; //in pixels
+
+    const circleXScaling = circleSize/w;
+    const circleYScaling = circleSize/h;
 
 
 const StyledGridline = styled.div`
-    position: relative;
+    position: absolute;
     background: #6699CC;
 
 
-    height: ${(props => props.isRow ? '1vw' : '100vh')};
-    width: ${(props => props.isRow ? '100vw' : '1vh')};
+    height: ${(props) => props.isRow ? `${circleSize}px` : '100%'};
+    width: ${(props) => props.isRow ? '100%' : `${circleSize}px`};
     top: ${(props) => props.isRow ? `${props.fixedPos}%`:  'initial'};
     left: ${(props) => props.isRow ? 'initial':  `${props.fixedPos}%`};
     
@@ -26,36 +30,21 @@ const StyledGridline = styled.div`
 
     &.line-appear, &.line-enter {
         border-radius: 50%;
-        transform: ${(props) => {
-                    if (props.isRow) {
-                        if (props.isDot) {
-                            return ('scaleX(.01)');
-                        } else {
-                            return ('scaleX(0)');
-                        }
-                    } else {
-                        if (props.isDot) {
-                            return ('scaleY(.01)');
-                        }  else {
-                            return ('scaleY(0)');
-                        }
-                    }
-                }}    
+        transform: ${(props) => props.isRow ? `scaleX(${circleXScaling})` : `scaleY(${circleYScaling})`};    
     }
-    
     &.line-appear-active, &.line-enter-active {
         border-radius: 0%;
         
-        transform: scaleX(1) scaleY(.1);
+        transform: ${(props) => props.isRow ? `scaleX(1) scaleY(.1)` : `scaleY(1) scaleX(.1)`};  
 
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms; 
         transition-property: all;
+
+        will-change: transform;
     }
     &.line-appear-done, &.line-enter-done{
-    
-        transform: scaleX(1) scaleY(.1);
-    
+        transform: ${(props => props.isRow ? 'scaleX(1) scaleY(.1)': 'scaleY(1) scaleX(.1)')};
     }
 `;
 

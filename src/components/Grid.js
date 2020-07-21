@@ -40,8 +40,8 @@ const randn_bm = () => {
 
 
 
-const MIN_DURATION = 100;
-const MIN_DELAY = 500;
+const MIN_DURATION = 300;
+const MIN_DELAY = 1000;
 
 const position = (i, spacing, offset, random) => {
     let fixedPos = offset + spacing * i;
@@ -93,9 +93,8 @@ const Grid = (props) => {
     /* change the state after animation is complete */
         return (
             <StyledGrid> 
-                    <div style = {{'position':'absolute', 'top':'76%', 'transform-origin': '86% 76%', 'transform':'rotate(45deg)'}}>
-                    <Gridline isDot = {true }floatingPos = {86} fixedPos = {76} isRow = {true} delay= {1000} duration = {500}/>
-                    </div>
+                    {rowLines}
+                    {colLines}
             </StyledGrid> 
             );
 }

@@ -7,7 +7,7 @@ const defaultGridProps = {
     random: true,
     numLines: 16,
     offset: 0,
-    avgDuration: 10000,
+    avgDuration: 0,
     avgDelay: 2300,
     isDot: true,
 };
@@ -22,7 +22,7 @@ const HomeAnime = (props) => {
     return(
         <div>
             <Grid  {...defaultGridProps} />
-            <Hero />
+            {/*<Hero />*/}
 
         </div>
         );
