@@ -94,7 +94,7 @@ const Grid = (props) => {
         return (
             <StyledGrid> 
                     <div style = {{'position':'absolute', 'top':'76%', 'transform-origin': '86% 76%', 'transform':'rotate(45deg)'}}>
-                    <Gridline floatingPos = {86} fixedPos = {76} isRow = {true} delay= {1000} duration = {500}/>
+                    <Gridline isDot = {true }floatingPos = {86} fixedPos = {76} isRow = {true} delay= {1000} duration = {500}/>
                     </div>
             </StyledGrid> 
             );
