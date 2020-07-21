@@ -8,7 +8,7 @@ import { CSSTransition } from 'react-transition-group';
     const h = window.innerHeight;
 
 const StyledGridline = styled.div`
-    position: absolute;
+    position: relative;
     background: #6699CC;
 
 
@@ -16,15 +16,17 @@ const StyledGridline = styled.div`
     width: ${(props => props.isRow ? '100vw' : '1vh')};
     top: ${(props) => props.isRow ? `${props.fixedPos}%`:  'initial'};
     left: ${(props) => props.isRow ? 'initial':  `${props.fixedPos}%`};
-
     
     transform-origin: ${(props) => props.isRow ? `${props.floatingPos}%` : '50%'}
-                      ${(props) => props.isRow ? '50%' : `${props.floatingPos}%`};
+    ${(props) => props.isRow ? '50%' : `${props.floatingPos}%`};
+    
+
 
 
     &.line-appear, &.line-enter {
         border-radius: 50%;
-        transform: scaleX(.01);
+        transform: scaleX(.01) 
+    
     }
     
     &.line-appear-active, &.line-enter-active {

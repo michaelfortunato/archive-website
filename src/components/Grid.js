@@ -14,7 +14,6 @@ const StyledGrid = styled.div`
     z-index: 0;
     overflow:hidden;
 
-
     &.fade-out-appear, &.fade-out-enter{
         opacity: 1;
     }
@@ -94,8 +93,9 @@ const Grid = (props) => {
     /* change the state after animation is complete */
         return (
             <StyledGrid> 
-                <Gridline floatingPos = {20} fixedPos = {50} isRow = {true} delay= {1000} duration = {500}/>
-                
+                    <div style = {{'position':'absolute', 'top':'76%', 'transform-origin': '86% 76%', 'transform':'rotate(45deg)'}}>
+                    <Gridline floatingPos = {86} fixedPos = {76} isRow = {true} delay= {1000} duration = {500}/>
+                    </div>
             </StyledGrid> 
             );
 }
