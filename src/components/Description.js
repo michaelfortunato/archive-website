@@ -18,17 +18,25 @@ const CaroselKeyframe = keyframes`
 `;
 
 const StyledDesc = styled.div`
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(-100px);
+    font-size:50px;
+    color: white;
+
+
     /* @keyframes duration | timing-function | delay | 
     iteration-count | direction | fill-mode | play-state | name */
-    transform: translateY(-100px);
     animation: ${CaroselKeyframe} 4s ease-in-out ${(props) => props.delay}ms infinite ;
-    font-size: 20px;
+
 `;
 
 const Description = (props) => {
     return (
         <StyledDesc delay = {props.delay}>
-            Desc {props.desc}
+            {props.desc}
         </StyledDesc>
     );
 }

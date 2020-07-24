@@ -11,8 +11,8 @@ const Hero = (props) => {
                     <Triangle />
                     <div className = 'col s6'>
                         <Name firstName = 'Michael Newman' lastName = 'Fortunato'/>
-                        <Description delay = {0}/>
-                        <Description desc = {"we"} delay = {2000}/>
+                        <Description desc = {'Front End'}delay = {0}/>
+                        <Description desc = {"Full Stack"} delay = {2000}/>
                     </div>
                     <Triangle />
                 </div>

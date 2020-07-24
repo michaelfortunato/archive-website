@@ -7,7 +7,7 @@ const defaultGridProps = {
     random: true,
     numLines: 10,
     offset: 0,
-    avgDuration: 500,
+    avgDuration: 100,
     avgDelay: 2300,
     isDot: true,
 };
