@@ -5,6 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 const StyledGridline = styled.div`
     position: absolute;
     background:#6699CC;
+    
     left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}vh`};
     top: ${(props) => props.isRow ? `${props.fixedPos}vh` : `${props.floatingPos}%`};
     height: ${(props) => props.isDot ? '10px': '0px'};
@@ -22,8 +23,8 @@ const StyledGridline = styled.div`
     }
     
     &.line-appear-active {
-        height: ${(props) => props.isRow ? '1px': '100%'};
-        width:  ${(props) => props.isRow ? '100%': '1px'};
+        height: ${(props) => props.isRow ? '3px': '100%'};
+        width:  ${(props) => props.isRow ? '100%': '3px'};
         
         left: ${(props) => props.isRow ? '0% !important': ''};
         top: ${(props) => props.isRow ? '': '0% !important'};
@@ -36,8 +37,8 @@ const StyledGridline = styled.div`
         will-change: transition;
     }
     &.line-appear-done{
-        height: ${(props) => props.isRow ? '1px': '100%'};
-        width:  ${(props) => props.isRow ? '100%': '1px'};
+        height: ${(props) => props.isRow ? '3px': '100%'};
+        width:  ${(props) => props.isRow ? '100%': '3px'};
         left: ${(props) => props.isRow ? '0% !important': `${props.fixedPos}vh`};
         top: ${(props) => props.isRow ? `${props.fixedPos}vh`: '0% !important'};
         border-radius: 0;

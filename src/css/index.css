@@ -5,8 +5,8 @@ html {
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
     overflow-x:hidden; /* overflow-x:hidden; important consideration */
-    
-    /*background-color: #515151; */
+   
+    background-color: #515151; 
     
 }
 

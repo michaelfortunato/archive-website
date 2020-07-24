@@ -5,7 +5,7 @@ import  Hero from './Hero.js'
 
 const defaultGridProps = {
     random: true,
-    numLines: 16,
+    numLines: 10,
     offset: 0,
     avgDuration: 500,
     avgDelay: 2300,
