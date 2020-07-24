@@ -14,6 +14,7 @@ const StyledGrid = styled.div`
     z-index: 0;
     overflow:hidden;
 
+    //transform: scaleY(2) rotate(45deg);
 
     &.fade-out-appear, &.fade-out-enter{
         opacity: 1;
