@@ -1,7 +1,6 @@
 import React from 'react'
 import  styled  from 'styled-components';
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
-
+import { CSSTransition } from 'react-transition-group'
 import Gridline from './Gridline.js';
 
 const StyledGrid = styled.div`
@@ -78,26 +77,35 @@ const Grid = (props) => {
     for(let i = 1; i <= props.numLines; i++) {
         pos_conf = position(i, spacing, props.offset, props.random);
         time_conf = timing(props.avgDuration, props.avgDelay, props.random);
-        conf = { ...pos_conf, ...time_conf, key: i, isRow: true, isDot: props.isDot, setIsGridDone: props.setIsGridDone}
+        conf = { ...pos_conf, ...time_conf, isRow: true, isDot: props.isDot, setIsGridDone: props.setIsGridDone, 
+            isGridDone: props.isGridDone}
         totalTimeout = Math.max(time_conf.duration + time_conf.delay, totalTimeout);
-        rowLines.push(<Gridline  {...conf} />)
+        rowLines.push(<Gridline key = {i} {...conf} />)
     } 
     /* Then column */
     for(let i = 1; i <= w/h* props.numLines; i++) {
         pos_conf = position(i, spacing, props.offset, props.random);
         time_conf = timing(props.avgDuration, props.avgDelay, props.random);
-        conf = { ...pos_conf, ...time_conf, key: i, isRow: false, isDot: props.isDot, setIsGridDone: props.setIsGridDone}
+        conf = { ...pos_conf, ...time_conf, isRow: false, isDot: props.isDot, setIsGridDone: props.setIsGridDone, isGridDone: props.isGridDone}
         totalTimeout = Math.max(time_conf.duration + time_conf.delay, totalTimeout);
-        colLines.push(<Gridline  {...conf} />)
+        colLines.push(<Gridline key = {i + props.numLines} {...conf} />)
     }
-    
-    //setTimeout(() => props.setIsGridDone(true), 3000)
+    console.log(props.isGridDone);
+
+    //setTimeout(() => props.setIsGridDone(true), 4000)
     /* change the state after animation is complete */
         return (
-            <StyledGrid> 
-                {rowLines} 
-                {colLines} 
-            </StyledGrid> 
+            <CSSTransition
+                appear = {true}
+                in = {true}
+                timeout = {props.duration + props.delay}
+                classNames = 'fade-out'
+                >
+                <StyledGrid duration = {props.duration} delay = {props.delay}> 
+                    {rowLines} 
+                    {colLines} 
+                </StyledGrid> 
+            </CSSTransition>
             );
 }
 

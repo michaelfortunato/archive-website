@@ -6,12 +6,14 @@ const StyledGridline = styled.div`
     position: absolute;
     background:#6699CC;
     
-    left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}vh`};
-    top: ${(props) => props.isRow ? `${props.fixedPos}vh` : `${props.floatingPos}%`};
-    height: ${(props) => props.isDot ? '10px': '0px'};
-    width: ${(props) => props.isDot ? '10px': '0px'};
+    /*
+    left: ${(props) => props.isRow ? `0%` : `${props.fixedPos}vh`};
+    top: ${(props) => props.isRow ? `${props.fixedPos}vh` : `0%`};
+    height: ${(props) => props.isRow ? '3px': '100%'};
+    width: ${(props) => props.isRow ? '100%': '3px'};
+    */
     
-    border-radius: ${(props) => props.isDot ? '50%': '0%'};
+    //border-radius: ${(props) => props.isDot ? '50%': '0%'};
 
     &.line-appear {
         left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}vh`};
@@ -49,7 +51,7 @@ const StyledGridline = styled.div`
 const Gridline = (props) => {
     return(
         <CSSTransition
-        in = {true}
+        in = {!props.isGridDone}
         appear =  {true}
         classNames = "line"
         timeout={props.duration + props.delay}>

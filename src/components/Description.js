@@ -23,7 +23,7 @@ const StyledDesc = styled.div`
     top: 50%;
     opacity: 0;
     transform: translateY(-100px);
-    font-size:50px;
+    font-size: 50px;
     color: white;
 
 

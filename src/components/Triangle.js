@@ -8,6 +8,6 @@ const StyledTriangle = styled.div`
 
 const Triangle = () =>
 {
-    return (<StyledTriangle className = 'col s3' > Triagng</StyledTriangle>);
+    return (<StyledTriangle className = 'col l3 s0' > Triagng</StyledTriangle>);
 }
 export default Triangle;
