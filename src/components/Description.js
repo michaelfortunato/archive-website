@@ -18,9 +18,10 @@ const CaroselKeyframe = keyframes`
 `;
 
 const StyledDesc = styled.div`
+   
     position: absolute;
-    left: 50%;
-    top: 50%;
+    /*left: 50%;
+    top: 50%;*/
     opacity: 0;
     transform: translateY(-100px);
     font-size: 50px;

@@ -30,6 +30,7 @@ const StyledName = styled.div`
     overflow: visible;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
     
