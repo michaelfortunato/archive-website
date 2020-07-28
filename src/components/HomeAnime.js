@@ -1,10 +1,12 @@
-import React, { useState }from 'react'
+import React, { useState }from 'react';
 import { CSSTransition } from 'react-transition-group';
-import Grid from './Grid.js'
-import  Hero from './Hero.js'
-import Name from './Name.js'
-import Triangle from './Triangle.js'
-import Description from './Description.js'
+import styled from 'styled-components';
+import Grid from './Grid.js';
+import  Hero from './Hero.js';
+import Name from './Name.js';
+import Triangle from './Triangle.js';
+import Description from './Description.js';
+
 
 const defaultGridProps = {
     random: true,
@@ -17,28 +19,26 @@ const defaultGridProps = {
     isDot: true,
 };
 
+const StyledBanner = styled.div`
+    position: relative;
+    top: 14%;
+
+`;
 
 const HomeAnime = (props) => {
-    const [isGridDone, setIsGridDone] = useState(false)
-    defaultGridProps.setIsGridDone = setIsGridDone;
-    defaultGridProps.isGridDone = isGridDone;
 
 
 
     return(
         <div >
-            <CSSTransition>
-                <Grid  {...defaultGridProps} />
-            </CSSTransition> 
-
+            <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <Triangle />
-                    <div style = {{'position': 'relative', 'top': '15%'}} className = 'col l6 s12'>
+                    <div className = 'col l3 s0'>dfd</div>
+                    <StyledBanner className = 'col l6 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
-                        <Description desc = {'Front End'} delay = {0}/>
-                        <Description desc = {"Full Stack"} delay = {2000}/>
-                    </div>
-                    <Triangle />
+                        <Description />
+                    </StyledBanner>
+                    <div className = 'col l3 s0'></div>
             </div>
 
         </div>

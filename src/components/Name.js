@@ -33,8 +33,6 @@ const StyledName = styled.div`
     position: relative;
 }
 
-    
-
 `;
 
 const Name = (props) => {

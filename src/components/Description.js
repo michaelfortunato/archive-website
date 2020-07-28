@@ -1,44 +1,43 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import DescItem from './DescItem.js';
 
-const CaroselKeyframe = keyframes`
-    0% {
-        opacity: 0;
-        transform: translateY(-100px);
-    }
-    
-    20%, 25%, 30% {
-        opacity:1;
-        transform: translateY(0);
-    }
-    50%, 100% {
-        opacity:0;
-        transform: translateY(100px);
-    }
-`;
+const tags = ['Software Engineering', 'Statistical Machine Learning', 'Back-End Development', 'Complexity Theory',
+ 'Full Stack Development', 'Front-End Development'];
 
-const StyledDesc = styled.div`
-   
-    position: absolute;
-    /*left: 50%;
-    top: 50%;*/
-    opacity: 0;
-    transform: translateY(-100px);
-    font-size: 50px;
-    color: white;
+const StyledDescription = styled.div`
+    position: relative; 
+    display: flex;
+    justify-content: center;
 
-
-    /* @keyframes duration | timing-function | delay | 
-    iteration-count | direction | fill-mode | play-state | name */
-    animation: ${CaroselKeyframe} 4s ease-in-out ${(props) => props.delay}ms infinite ;
 
 `;
 
 const Description = (props) => {
+ 
+    console.log(tags.length);
+
+    let n = tags.length;
+
+    let movePercentage = 1/n * 100;
+
+    /* total time * 1/n = moveTime */ 
+    /* => totalTime = moveTime * n */
+    let moveTime = 2000; /* in ms */
+    let totalTime = moveTime * n;
+    let waitTime = moveTime;
+    let aniTags = tags.map((tag, index) => {
+        return(
+        <DescItem tag = {tag} movePercentage = {movePercentage} totalTime = {totalTime} delay = {waitTime * index}/>
+        );
+    } );
+
+
+
     return (
-        <StyledDesc delay = {props.delay}>
-            {props.desc}
-        </StyledDesc>
+        <StyledDescription>
+          {aniTags}
+        </StyledDescription>
     );
 }
 
