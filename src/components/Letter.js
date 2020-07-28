@@ -20,6 +20,7 @@ const StyledLetter = styled.span`
         transform: translate(0, 0);
 
         transition: all;
+       
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
     

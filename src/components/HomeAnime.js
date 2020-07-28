@@ -12,10 +12,10 @@ const defaultGridProps = {
     random: true,
     numLines: 10,
     offset: 0,
-    avgDuration: 100,
-    avgDelay: 2300,
+    avgDuration: 200,
+    avgDelay: 3000,
     duration: 1500,
-    delay: 4000,
+    delay: 5600,
     isDot: true,
 };
 

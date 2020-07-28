@@ -14,13 +14,13 @@ const randomArcPoint = (radius) => {
 
 
 
-const configSetup = (char) => {
+const configSetup = (char, index) => {
     let config = {}
     config.char = char;
     config.XOffset = randomArcPoint(38).x; //((index % 2) == 0) ? 25 : -25;
     config.YOffset = randomArcPoint(38).y;// ((index % 2) == 0) ? -75 : 75;
     config.duration = 400;
-    config.delay = 3500;
+    config.delay = 5000;
     return config;
 }
 
@@ -43,20 +43,20 @@ const Name = (props) => {
 
 
     firstName = firstName.map( (char, index) => {
-        config = configSetup(char);
+        config = configSetup(char, index);
         return (<Letter key = {index} {...config}/>
         );
     });
 
 
     middleName = middleName.map( (char, index) => {
-        config = configSetup(char);
+        config = configSetup(char, index);
         return (<Letter key = {index + 7} {...config}/>
         );
     });
 
     lastName = lastName.map( (char, index) => {
-        config = configSetup(char);
+        config = configSetup(char, index);
         return (<Letter key = {index + 16} {...config}/>
         );
     });
@@ -67,11 +67,11 @@ const Name = (props) => {
             
             <StyledName>
                
-                <div style = {{'display': 'inline-block', 'margin-right': '20px'}}>
+                <div style = {{'display': 'inline-block', 'margin-right': '10px'}}>
                 {firstName}      
                 </div>  
-                
-                <div style = {{'display': 'inline-block', 'margin-left': '20px'}}>
+          
+                <div style = {{'display': 'inline-block', 'margin-left': '10px'}}>
                 {lastName}
                 </div>
              
