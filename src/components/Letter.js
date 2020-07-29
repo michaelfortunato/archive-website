@@ -23,6 +23,8 @@ const StyledLetter = styled.span`
        
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
+
+    
     
     }
     &.letter-appear-done, &.letter-enter-done{

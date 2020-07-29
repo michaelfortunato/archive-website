@@ -2,7 +2,6 @@ import React, { useState }from 'react';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import Grid from './Grid.js';
-import  Hero from './Hero.js';
 import Name from './Name.js';
 import Triangle from './Triangle.js';
 import Description from './Description.js';
@@ -13,9 +12,9 @@ const defaultGridProps = {
     numLines: 10,
     offset: 0,
     avgDuration: 200,
-    avgDelay: 3000,
+    avgDelay: 2600,
     duration: 1500,
-    delay: 5600,
+    delay: 5000,
     isDot: true,
 };
 
@@ -33,12 +32,12 @@ const HomeAnime = (props) => {
         <div >
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <div className = 'col l3 s0'></div>
+                    <div className = 'col l3 s0'>df</div>
                     <StyledBanner className = 'col l6 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div className = 'col l3 s0'></div>
+                    <div className = 'col l3 s0'>dfd</div>
             </div>
 
         </div>

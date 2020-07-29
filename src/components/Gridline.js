@@ -4,7 +4,12 @@ import { CSSTransition } from 'react-transition-group';
 
 const StyledGridline = styled.div`
     position: absolute;
+    /*
     background:#6699CC;
+    */
+    background: translucent;
+    backdrop-filter: blur(5px);
+    z-index: 4;
     
     /*
     left: ${(props) => props.isRow ? `0%` : `${props.fixedPos}vh`};
@@ -36,7 +41,12 @@ const StyledGridline = styled.div`
         transition-property: all;
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms;
-        will-change: transition;
+
+        -webkit-transition-property: all;
+        -webkit-transition-duration: ${(props) => props.duration}ms; 
+        -webkit-transition-delay: ${(props) => props.delay}ms;
+        will-change: all;
+        
     }
     &.line-appear-done{
         height: ${(props) => props.isRow ? '3px': '100%'};

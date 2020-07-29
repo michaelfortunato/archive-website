@@ -3,7 +3,7 @@ import React from 'react'
 import './css/index.css'
 import './css/materialize.css'
 
-import Navbar from './components/Navbar.js'
+import Navbar from './components/Nav/Navbar.js'
 import HomeAnime from './components/HomeAnime.js'
 
 

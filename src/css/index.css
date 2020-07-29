@@ -6,7 +6,15 @@ html {
     height: 100vh;/* important consideration */
     overflow-x:hidden; /* overflow-x:hidden; important consideration */
    
+    /*background-image: url('../milky-way.jpg');
+    background-size: 100% 100%;
     background-color: #515151; 
+    
+    */
+    background: #73C8A9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #373B44, #73C8A9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #373B44, #73C8A9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     
 }
 
