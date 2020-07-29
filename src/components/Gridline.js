@@ -7,8 +7,7 @@ const StyledGridline = styled.div`
     /*
     background:#6699CC;
     */
-    background: translucent;
-    backdrop-filter: blur(5px);
+    background: #C38D9E;
     z-index: 4;
     
     /*
