@@ -48,7 +48,7 @@ const NavContent = (props) => {
         classNames = 'toggle-nav'
         timeout = {400}>
             <StyledNavContent className = 'row'>
-                <div className="navbar-item col s1 offset-s6"><h5 className="center-align">Home</h5></div>
+                <div className="navbar-item col s1 offset-s7"><h5 className="center-align">Home</h5></div>
                 <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
                 <div className="navbar-item col s1"><h5 className="center-align">Home</h5></div>
                 <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
