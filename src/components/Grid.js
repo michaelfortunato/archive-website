@@ -41,8 +41,8 @@ const randn_bm = () => {
 
 
 
-const MIN_DURATION = 200;
-const MIN_DELAY = 750;
+const MIN_DURATION = 400;
+const MIN_DELAY = 1800;
 
 const position = (i, spacing, offset, random) => {
     let fixedPos = offset + spacing * i;

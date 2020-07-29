@@ -4,7 +4,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 const StyledLetter = styled.span`
-    color: white;
     position: relative;
     display:inline-block;
 

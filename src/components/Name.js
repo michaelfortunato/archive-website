@@ -31,6 +31,7 @@ const StyledName = styled.div`
     display: flex;
     justify-content: center;
     position: relative;
+    color: #264653;
 }
 
 `;
