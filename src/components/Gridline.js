@@ -7,8 +7,9 @@ const StyledGridline = styled.div`
     /*
     background:#6699CC;
     */
-    background: #C38D9E;
+    //background: #C38D9E;
     z-index: 4;
+    background: white;
     
     /*
     left: ${(props) => props.isRow ? `0%` : `${props.fixedPos}vh`};

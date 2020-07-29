@@ -28,7 +28,7 @@ const StyledDescItem = styled.div`
     opacity: 0;
     transform: translateY(-50px);
     font-size: 50px;
-    color: white;
+
 
 
     /* @keyframes duration | timing-function | delay | 

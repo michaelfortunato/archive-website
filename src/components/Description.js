@@ -9,6 +9,7 @@ const StyledDescription = styled.div`
     position: relative; 
     display: flex;
     justify-content: center;
+    color: white;
 
 
 `;
