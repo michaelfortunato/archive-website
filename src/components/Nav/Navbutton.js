@@ -103,6 +103,48 @@ const StyledPatty1 = styled.span`
 
 `;
 const StyledPatty2 = styled.span`
+    display: block;
+    position: absolute;
+
+    height: 5px;
+    width: 100%;
+
+    background: black;
+
+    top: 18px;
+    left: 0;
+
+    border-radius: 9px;
+    opacity: 1;
+
+    &.patty-appear, &.patty-enter  {}
+    &.patty-appear-active, &.patty-enter-active {
+        opacity: 0;
+        left: -60px;
+        transition: all 250ms ease-in-out;
+    }
+
+    &.patty-appear-done, &.patty-enter-done {
+        opacity: 0;
+        left: -60px;
+    }
+
+    &.patty-exit {
+        opacity: 0;
+        left: -60px;
+    }
+    &.patty-exit-active {
+        opacity: 1;
+        left: 0px;
+        transition: all 250ms ease-in-out;
+    }
+    &.patty-exit-done {
+        opacity: 1;
+        left: 0px;
+    }
+
+
+
 `;
 
 const StyledPatty3 = styled.span` 
@@ -164,6 +206,9 @@ const Navbutton = (props) =>  {
     <StyledNavbutton onClick = {() => props.setIsVisible(! props.isVisible)}>
         <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
             <StyledPatty1/>
+        </CSSTransition>
+        <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
+            <StyledPatty2 />
         </CSSTransition>
         <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
             <StyledPatty3 />
