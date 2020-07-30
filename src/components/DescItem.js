@@ -27,7 +27,6 @@ const StyledDescItem = styled.div`
     top: 50%;*/
     opacity: 0;
     transform: translateY(-50px);
-    font-size: 50px;
 
 
 

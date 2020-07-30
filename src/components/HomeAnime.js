@@ -14,7 +14,7 @@ const defaultGridProps = {
     avgDuration: 200,
     avgDelay: 3000,
     duration: 1500,
-    delay: 5000,
+    delay: 6000,
     isDot: true,
 };
 
@@ -32,12 +32,12 @@ const HomeAnime = (props) => {
         <div >
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <div className = 'col l3 s0'>df</div>
+                    <div style = {{'opacity': '0'}} className = 'col l3 s0'>df</div>
                     <StyledBanner className = 'col l6 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div className = 'col l3 s0'>dfd</div>
+                    <div style = {{'opacity': '0'}} className = 'col l3 s0'> df</div>
             </div>
 
         </div>

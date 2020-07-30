@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import DescItem from './DescItem.js';
+import { CSSTransition } from 'react-transition-group';
 
 const tags = ['Software Engineering', 'Statistical Machine Learning', 'Back-End Development', 'Complexity Theory',
  'Full Stack Development', 'Front-End Development'];
@@ -9,8 +10,22 @@ const StyledDescription = styled.div`
     position: relative; 
     display: flex;
     justify-content: center;
-    color: white;
+    color: #264653;
+    font-size: 22px;
 
+    opacity: 0;
+    &.fade-in-appear, &.fade-in-enter {
+        opactiy: 0;
+    }
+    &.fade-in-appear-active, &.fade-in-enter-active {
+        opacity: 1;
+        transition-property: all;
+        transition-duration: 1500ms;
+        transition-delay: 6000ms;
+    }
+    &.fade-in-appear-done, &.fade-in-enter-done {
+        opacity: 1;
+    }
 
 `;
 
@@ -36,9 +51,15 @@ const Description = (props) => {
 
 
     return (
-        <StyledDescription>
-          {aniTags}
-        </StyledDescription>
+        <CSSTransition
+        appear = {true}
+        in = {true}
+        classNames = 'fade-in'
+        timeout = {7500}>
+            <StyledDescription>
+            {aniTags}
+            </StyledDescription>
+        </CSSTransition>
     );
 }
 

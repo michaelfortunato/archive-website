@@ -4,7 +4,12 @@ import { CSSTransition } from 'react-transition-group'
 
 const StyledNavbutton = styled.div`
 /* Icon 4 */
-
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    color :#black; 
+    font-size: 45px;
+    z-index: 3;
 
     &.change-color-enter {
 
@@ -76,11 +81,11 @@ const Navbutton = (props) =>  {
         in = {props.isVisible}
         classNames = {'change-color'}
         timeout = {4000}>
-    <div className = 'nav-open-button large material-icons'
+    <StyledNavbutton className = 'large material-icons'
         onClick = {() =>
         props.setIsVisible(! props.isVisible)}>
         menu
-    </div>
+    </StyledNavbutton>
     </CSSTransition>
     );
 }

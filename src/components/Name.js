@@ -20,18 +20,19 @@ const configSetup = (char, index) => {
     config.XOffset = randomArcPoint(38).x; //((index % 2) == 0) ? 25 : -25;
     config.YOffset = randomArcPoint(38).y;// ((index % 2) == 0) ? -75 : 75;
     config.duration = 400;
-    config.delay = 4050;
+    config.delay = 5350;
     return config;
 }
 
 const StyledName = styled.div`
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 100px;
+    font-size: 45px;
     overflow: visible;
     display: flex;
     justify-content: center;
     position: relative;
     color: #264653;
+    margin-bottom: 20px;
 }
 
 `;
@@ -70,6 +71,9 @@ const Name = (props) => {
                
                 <div style = {{'display': 'inline-block', 'margin-right': '10px'}}>
                 {firstName}      
+                </div>  
+                <div style = {{'display': 'inline-block', 'margin-left': '10px', 'margin-right': '10px'}}>
+                {middleName}      
                 </div>  
           
                 <div style = {{'display': 'inline-block', 'margin-left': '10px'}}>
