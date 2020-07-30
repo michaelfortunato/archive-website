@@ -9,84 +9,79 @@ const StyledNavbutton = styled.div`
     right: 5%;
     color :#black; 
     font-size: 45px;
-    z-index: 2;
-
-    &.change-color-enter {
-
-    }
-    &.change-color-enter-active{
-        color: black;
-        transition: all 4000ms;
-    }
-    &.change-color-enter-done{
-        color: black;
-    }
     z-index: 1;
 
-#nav-icon4 {
-}
+    .nav-icon1, {
+        width: 60px;
+        height: 45px;
+        position: relative;
+        margin: 50px auto;
+        transform: rotate(0deg);
+        transition: .5s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .patty2-exit{
+        display: block;
+        position: absolute;
+        height: 9px;
+        width: 100%;
+        background: #d3531a;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
 
-    #nav-icon4 span:nth-child(1) {
-    top: 0px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    }
-
-    #nav-icon4 span:nth-child(2) {
-    top: 18px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    }
-
-    #nav-icon4 span:nth-child(3) {
-    top: 36px;
-    -webkit-transform-origin: left center;
-    -moz-transform-origin: left center;
-    -o-transform-origin: left center;
-    transform-origin: left center;
-    }
-
-    #nav-icon4.open span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    top: -3px;
-    left: 8px;
-    }
-
-    #nav-icon4.open span:nth-child(2) {
-    width: 0%;
-    opacity: 0;
-    }
-
-    #nav-icon4.open span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    top: 39px;
-    left: 8px;
-    }
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+      
+      &.patty1-open-appear &.patty1-open-enter  {
+        top: 0px;
+      }
+      
+      &.patty2-open-appear &.patty2-open-enter  {
+        top: 18px;
+      }
+      
+      &.patty3-open-appear &.patty3-open-enter  {
+        top: 36px;
+      }
+      
+      &.patty1-open-appear-active &.patty1-open-enter-active  {
+        top: 18px;
+        transform: rotate(135deg);
+      }
+      
+      &.patty2-open-appear-active &.patty2-open-enter-active  {
+        opacity: 0;
+        left: -60px;
+      }
+      
+      &.patty1-open-appear-done &.patty1-open-enter-done{
+        top: 18px;
+        transform: rotate(-135deg);
+      }
 `;
 
 
 const Navbutton = (props) =>  {
     return(
-    <CSSTransition 
-        in = {props.isVisible}
-        classNames = {'change-color'}
-        timeout = {4000}>
-    <StyledNavbutton className = 'large material-icons'
-        onClick = {() =>
-        props.setIsVisible(! props.isVisible)}>
-        menu
+ 
+    <CSSTransition
+        classNames = 'open'
+        timeout = {}
+
+        
+    >
+    <StyledNavbutton>
+    <div className="nav-icon1">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </StyledNavbutton>
     </CSSTransition>
+ 
     );
 }
 
