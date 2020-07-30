@@ -9,7 +9,7 @@ const StyledNavbutton = styled.div`
     right: 5%;
     color :#black; 
     font-size: 45px;
-    z-index: 3;
+    z-index: 2;
 
     &.change-color-enter {
 

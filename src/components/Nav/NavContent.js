@@ -9,7 +9,7 @@ const StyledNavContent = styled.div`
     transform: translateY(-100%);
     background-color:#F5F5F5;
     clip-path: polygon(100% 0, 100% 100%, 0% 0%);
-    z-index: 1;
+    z-index: 0;
 
     &.toggle-nav-enter{
         transform: translateY(-100%);

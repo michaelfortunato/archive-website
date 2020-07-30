@@ -7,16 +7,16 @@ const CaroselKeyframe = (movePercentage) => {
     keyframes`
         0% {
             opacity: 0;
-            transform: translateY(-50px);
+            transform: translateY(-30px);
         }
         
         ${movePercentage/2}% {
             opacity:1;
-            transform: translateY(0);
+            transform: translateY(-10px);
         }
         ${movePercentage}%, 100%{
             opacity:0;
-            transform: translateY(50px);
+            transform: translateY(30px);
         }
 `);
 }
@@ -26,7 +26,7 @@ const StyledDescItem = styled.div`
     /*left: 50%;
     top: 50%;*/
     opacity: 0;
-    transform: translateY(-50px);
+    transform: translateY(-30px);
 
 
 

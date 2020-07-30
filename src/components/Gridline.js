@@ -8,15 +8,15 @@ const StyledGridline = styled.div`
     background:#6699CC;
     */
     //background: #C38D9E;
-    z-index: 4;
+    z-index: 0;
     background: white;
     
 
     &.line-appear {
         left: ${(props) => props.isRow ? `${props.floatingPos}%` : `${props.fixedPos}vh`};
         top: ${(props) => props.isRow ? `${props.fixedPos}vh` : `${props.floatingPos}%`};
-        height: ${(props) => props.isDot ? '5px': '0px'};
-        width: ${(props) => props.isDot ? '5px': '0px'};
+        height: ${(props) => props.isDot ? '7px': '0px'};
+        width: ${(props) => props.isDot ? '7px': '0px'};
         
         border-radius: ${(props) => props.isDot ? '50%': '0%'};
     }

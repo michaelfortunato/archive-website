@@ -4,7 +4,7 @@ html {
 #App{
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
-    overflow-x:hidden; /* overflow-x:hidden; important consideration */
+    overflow:hidden; /* overflow-x:hidden; important consideration */
    
     /*background-image: url('../milky-way.jpg');
     background-size: 100% 100%;

@@ -26,13 +26,14 @@ const configSetup = (char, index) => {
 
 const StyledName = styled.div`
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 45px;
+    font-size: 56px;
     overflow: visible;
     display: flex;
     justify-content: center;
     position: relative;
     color: #264653;
-    margin-bottom: 20px;
+    padding-top: 2%;
+    margin-bottom: 0px;
 }
 
 `;
@@ -72,9 +73,7 @@ const Name = (props) => {
                 <div style = {{'display': 'inline-block', 'margin-right': '10px'}}>
                 {firstName}      
                 </div>  
-                <div style = {{'display': 'inline-block', 'margin-left': '10px', 'margin-right': '10px'}}>
-                {middleName}      
-                </div>  
+                
           
                 <div style = {{'display': 'inline-block', 'margin-left': '10px'}}>
                 {lastName}
