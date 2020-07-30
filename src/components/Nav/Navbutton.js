@@ -72,7 +72,10 @@ const StyledPatty1 = styled.span`
     border-radius: 9px;
     opacity: 1;
 
-    &.patty-appear, &.patty-enter  {}
+    &.patty-appear, &.patty-enter  {
+        top: 0px;
+        transform: rotate(0deg);
+    }
     &.patty-appear-active, &.patty-enter-active {
         top: 18px;
         transform: rotate(135deg);
@@ -204,13 +207,13 @@ const Navbutton = (props) =>  {
         
     > */
     <StyledNavbutton onClick = {() => props.setIsVisible(! props.isVisible)}>
-        <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
+        <CSSTransition in = {props.isVisible} classNames = 'patty' timeout = {250}>
             <StyledPatty1/>
         </CSSTransition>
-        <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
+        <CSSTransition in = {props.isVisible} classNames = 'patty' timeout = {250}>
             <StyledPatty2 />
         </CSSTransition>
-        <CSSTransition in = {!props.isVisible} classNames = 'patty' timeout = {250}>
+        <CSSTransition in = {props.isVisible} classNames = 'patty' timeout = {250}>
             <StyledPatty3 />
         </CSSTransition>
     </StyledNavbutton>
