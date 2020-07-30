@@ -84,11 +84,14 @@ const StyledPatty1 = styled.span`
         transform: rotate(135deg);
     }
 
-    &.patty-exit {}
+    &.patty-exit {
+        top: 18px;
+        transform: rotate(135deg);
+    }
     &.patty-exit-active {
         top: 0px;
         transform: rotate(0deg);
-        transition: all .25s ease-in-out;
+        transition: all 250ms ease-in-out;
     }
     &.patty-exit-done {
         top: 0px;
@@ -129,7 +132,11 @@ const StyledPatty3 = styled.span`
         transform: rotate(-135deg);
     }
 
-    &.patty-exit {}
+    &.patty-exit {
+        top: 18px;
+        transform: rotate(-135deg);
+
+    }
     &.patty-exit-active {
         top: 36px;
         transform: rotate(0deg);
