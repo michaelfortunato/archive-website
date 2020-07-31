@@ -49,10 +49,10 @@ const NavContent = (props) => {
         classNames = 'toggle-nav'
         timeout = {400}>
             <StyledNavContent className = 'row'>
-                <div className="navbar-item col s1 offset-s7"><h5  style = {{'font-size': '10px'}} className="center-align">Home</h5></div>
-                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">About</h5></div>
-                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">Home</h5></div>
-                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">About</h5></div>
+                <div className="navbar-item col s1 offset-s7"><span  style = {{'font-size': '10px'}} className="center-align">Home</span></div>
+                <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
+                <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">Home</span></div>
+                <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
             </StyledNavContent>
         </CSSTransition>
     );
