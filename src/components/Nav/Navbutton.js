@@ -24,25 +24,7 @@ const StyledNavbutton = styled.div`
         left: 0;
     }
 
-    :hover {
-        .basepatty{
-            box-shadow: 0px 5px 17px white;
-            transition: all 400ms ease-in; 
-            
-            //transform: scaleX(1.1) scaleY(1.2);
-            
-           
-        }
-        ::after{
-            .basepatty{
-                box-shadow: none;
-                transition: all 180ms ease-in; 
-                //transform: scaleX(1.1) scaleY(1.2);
-                
-            }
-        }  
-      }
-     
+
 
 
 
