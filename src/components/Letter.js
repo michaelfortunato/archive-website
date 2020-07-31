@@ -15,13 +15,15 @@ const StyledLetter = styled.span`
     }
     
     &.letter-appear-active, &.letter-enter-active{
-        //opacity: 1;
+
         transform: translate(0, 0);
 
         transition: all;
        
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
+        
+        transition-timing-function: ease-in;
 
     
     

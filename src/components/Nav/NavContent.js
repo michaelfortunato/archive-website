@@ -7,9 +7,10 @@ const StyledNavContent = styled.div`
     left: 0;
     height: 100%;
     transform: translateY(-100%);
-    background-color:#F5F5F5;
+    background-color: #264653;
     clip-path: polygon(100% 0, 100% 100%, 0% 0%);
     z-index: 0;
+
 
     &.toggle-nav-enter{
         transform: translateY(-100%);
@@ -48,10 +49,10 @@ const NavContent = (props) => {
         classNames = 'toggle-nav'
         timeout = {400}>
             <StyledNavContent className = 'row'>
-                <div className="navbar-item col s1 offset-s7"><h5 className="center-align">Home</h5></div>
-                <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
-                <div className="navbar-item col s1"><h5 className="center-align">Home</h5></div>
-                <div className="navbar-item col s1"><h5 className="center-align">About</h5></div>
+                <div className="navbar-item col s1 offset-s7"><h5  style = {{'font-size': '10px'}} className="center-align">Home</h5></div>
+                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">About</h5></div>
+                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">Home</h5></div>
+                <div className="navbar-item col s1"><h5 style = {{'font-size': '10px'}} className="center-align">About</h5></div>
             </StyledNavContent>
         </CSSTransition>
     );

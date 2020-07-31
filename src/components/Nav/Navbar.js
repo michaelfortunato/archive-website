@@ -7,6 +7,7 @@ import Navbutton from './Navbutton.js';
 const StyledNavbar = styled.div`
     width: 100vw;
     height: 25%;
+    font-size: 5px;
 
 `;
 

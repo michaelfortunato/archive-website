@@ -1,6 +1,3 @@
-html {
-   font-size: 25%;
-}
 #App{
     width: 100vw; /* important consideration */
     height: 100vh;/* important consideration */
@@ -22,31 +19,12 @@ html {
 
 
 
-.navbar{
+.navbar {
     width: 100vw;
     height: 25%;
 }
 
-.nav-open-button{
-    position: absolute;
-    top: 5%;
-    right: 5%;
-    color :#F5F5F5; 
-    font-size: 65px;
-    z-index: 1;
-}
-.nav-close-button{
-    position: absolute;
-    left:5%;
-    top: 5%;
-    margin-left: 10px;
-    padding-left: 10px;
-    color : #515151; 
-    font-size: 30px;
-    z-index: 1;
-}
-
-.navbar-content{
+.navbar-content {
     position: relative;
     left: 0;
     height: 100%;
@@ -54,11 +32,13 @@ html {
     background-color:#F5F5F5;
     clip-path: polygon(100% 0, 100% 100%, 0% 0%);
     z-index: 1;
+    font-size: 5px;
 }
-.navbar-item{
+.navbar-item {
     position: relative;
     top: 25%;
-    color: black;
+    color: white;
+    font-size: 5px;
 }
 
 .slide-down-enter{
