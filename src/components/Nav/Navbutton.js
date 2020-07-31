@@ -24,10 +24,25 @@ const StyledNavbutton = styled.div`
         left: 0;
     }
 
-    .basepatty:hover {
-        color: rgba(255, 255, 255, 1);
-        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+    :hover {
+        .basepatty{
+            box-shadow: 0px 5px 17px white;
+            transition: all 400ms ease-in; 
+            
+            //transform: scaleX(1.1) scaleY(1.2);
+            
+           
+        }
+        ::after{
+            .basepatty{
+                box-shadow: none;
+                transition: all 180ms ease-in; 
+                //transform: scaleX(1.1) scaleY(1.2);
+                
+            }
+        }  
       }
+     
 
 
 

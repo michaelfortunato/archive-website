@@ -6,7 +6,7 @@ const StyledNavContent = styled.div`
     position: relative;
     left: 0;
     height: 100%;
-    transform: translateY(-100%);
+    transform: translateY(-102%);
     background-color: #264653;
     clip-path: polygon(100% 0, 100% 100%, 0% 0%);
 
@@ -16,7 +16,7 @@ const StyledNavContent = styled.div`
 
 
     &.toggle-nav-enter{
-        transform: translateY(-100%);
+        transform: translateY(-102%);
     }
     
     &.toggle-nav-enter-active{
@@ -32,12 +32,12 @@ const StyledNavContent = styled.div`
         transform: translateY(0);
     }
     &.toggle-nav-exit-active{
-        transform: translateY(-100%);
+        transform: translateY(-102%);
         transition: transform 250ms;
 
     }
     &.toggle-nav-exit-done{
-        transform: translateY(-100%);
+        transform: translateY(-102%);
 
     }
 `;
@@ -53,7 +53,7 @@ const NavContent = (props) => {
         timeout = {400}>
             
             <StyledNavContent className = 'row'>
-                <div className="navbar-item col s1 offset-s7"><span  style = {{'font-size': '10px'}} className="center-align">Home</span></div>
+                <div className="navbar-item col s1 offset-s8"><span  style = {{'font-size': '10px'}} className="center-align">Home</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">Home</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
