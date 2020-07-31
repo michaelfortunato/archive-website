@@ -9,6 +9,9 @@ const StyledNavContent = styled.div`
     transform: translateY(-100%);
     background-color: #264653;
     clip-path: polygon(100% 0, 100% 100%, 0% 0%);
+
+
+
     z-index: 0;
 
 
@@ -48,12 +51,14 @@ const NavContent = (props) => {
         in = {props.isVisible}
         classNames = 'toggle-nav'
         timeout = {400}>
+            
             <StyledNavContent className = 'row'>
                 <div className="navbar-item col s1 offset-s7"><span  style = {{'font-size': '10px'}} className="center-align">Home</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">Home</span></div>
                 <div className="navbar-item col s1"><span style = {{'font-size': '10px'}} className="center-align">About</span></div>
             </StyledNavContent>
+         
         </CSSTransition>
     );
 }

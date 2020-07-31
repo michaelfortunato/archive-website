@@ -4,8 +4,8 @@ import { CSSTransition } from 'react-transition-group'
 
 const StyledNavbutton = styled.div`
     position: absolute;
-    top: 2.5%;
-    left:1.5%;
+    top: 4.5%;
+    left:2.5%;
     color :#F5F5F5; 
     font-size: 65px;
     z-index: 1;
@@ -23,6 +23,12 @@ const StyledNavbutton = styled.div`
         background-color: #264653;
         left: 0;
     }
+
+    .basepatty:hover {
+        color: rgba(255, 255, 255, 1);
+        box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+      }
+
 
 
 
