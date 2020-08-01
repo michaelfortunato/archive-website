@@ -32,17 +32,17 @@ const HomeAnime = (props) => {
         <div >
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <div className = 'col l2 s0 ' id = 'left-screen'>
+                    <div style = {{'height': '100%'}}className = 'col l4 s0 ' id = 'left-screen'>
                         df
-                        <Triangle containerID = 'left-screen'/>
+                        {/*<Triangle containerID = 'left-screen'/>*/}
                     </div>
-                    <StyledBanner className = 'col l8 s12'>
+                    <StyledBanner className = 'col l4 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div id = 'right-screen' className = 'col l2 s0'>
+                    <div id = 'right-screen' className = 'col l4 s0'>
                         df
-                        <Triangle containerID = 'right-screen'/>
+                        {/*<Triangle containerID = 'right-screen'/>*/}
                     </div>
             </div>
 
