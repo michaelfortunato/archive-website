@@ -9,7 +9,7 @@ import Description from './Description.js';
 
 const defaultGridProps = {
     random: true,
-    numLines: 10,
+    numLines: 12,
     offset: 0,
     avgDuration: 200,
     avgDelay: 3000,
@@ -32,12 +32,18 @@ const HomeAnime = (props) => {
         <div >
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <div style = {{'opacity': '0'}} className = 'col l2 s0'>df</div>
+                    <div className = 'col l2 s0 ' id = 'left-screen'>
+                        df
+                        <Triangle containerID = 'left-screen'/>
+                    </div>
                     <StyledBanner className = 'col l8 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div style = {{'opacity': '0'}} className = 'col l2 s0'> df</div>
+                    <div id = 'right-screen' className = 'col l2 s0'>
+                        df
+                        <Triangle containerID = 'right-screen'/>
+                    </div>
             </div>
 
         </div>

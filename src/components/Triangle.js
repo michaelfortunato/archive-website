@@ -1,13 +1,46 @@
 import React from 'react'
-import styled from 'styled-components'
+import ReactDOM from "react-dom";
+import * as THREE from 'three'
 
-const StyledTriangle = styled.div`
 
 
-`;
+class Triangle extends React.Component {
+    componentDidMount() {
+        
+        /*let height = document.getElementById(this.props.containerID).offsetHeight;
+        let width = document.getElementById(this.props.containerID).offsetWidth;
+        console.log(height);
+        console.log(width);*/
 
-const Triangle = () =>
-{
-    return (<StyledTriangle className = 'col l3 s0' ></StyledTriangle>);
+        let scene = new THREE.Scene();
+        let camera = new THREE.PerspectiveCamera( 75, 2, 0.1, 1000 );
+        let renderer = new THREE.WebGLRenderer();
+        renderer.setSize( 500, 250 );
+        // document.body.appendChild( renderer.domElement );
+        // use ref as a mount point of the Three.js scene instead of the document.body
+        this.mount.appendChild( renderer.domElement );
+        let geometry = new THREE.BoxGeometry( 1, 1, 1 );
+        let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+        let cube = new THREE.Mesh( geometry, material );
+        scene.add( cube );
+        camera.position.z = 5;
+        let animate = function () {
+          requestAnimationFrame( animate );
+          camera.rotation.x += 0.01;
+          camera.rotation.y += 0.01;
+          renderer.render( scene, camera );
+        };
+        animate();
+      }
+
+    render() {
+
+        return (
+            <div ref={ref => (this.mount = ref)} />
+          )
+    }
+
 }
+
+
 export default Triangle;
