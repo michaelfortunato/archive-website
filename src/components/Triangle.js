@@ -5,6 +5,11 @@ import * as THREE from 'three'
 
 
 class Triangle extends React.Component {
+    constructor(props) {
+      super(props);
+      this.windowElement = React.createRef();
+
+    }
     componentDidMount() {
         
         /*let height = document.getElementById(this.props.containerID).offsetHeight;
@@ -18,7 +23,7 @@ class Triangle extends React.Component {
         renderer.setSize( 500, 250 );
         // document.body.appendChild( renderer.domElement );
         // use ref as a mount point of the Three.js scene instead of the document.body
-        this.mount.appendChild( renderer.domElement );
+        this.windowElement.current.appendChild( renderer.domElement );
         let geometry = new THREE.BoxGeometry( 1, 1, 1 );
         let material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
         let cube = new THREE.Mesh( geometry, material );
@@ -36,7 +41,7 @@ class Triangle extends React.Component {
     render() {
 
         return (
-            <div ref={ref => (this.mount = ref)} />
+            <div ref={this.windowElement} />
           )
     }
 
