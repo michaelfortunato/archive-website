@@ -83,7 +83,7 @@ const Grid = (props) => {
         rowLines.push(<Gridline key = {i} {...conf} />)
     } 
     /* Then column */
-    for(let i = 1; i <= w/h* props.numLines; i++) {
+    for(let i = 1; i <= w/h* props.numLines + 1; i++) {
         pos_conf = position(i, spacing, props.offset, props.random);
         time_conf = timing(props.avgDuration, props.avgDelay, props.random);
         conf = { ...pos_conf, ...time_conf, isRow: false, isDot: props.isDot, setIsGridDone: props.setIsGridDone, isGridDone: props.isGridDone}

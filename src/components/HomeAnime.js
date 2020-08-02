@@ -32,7 +32,7 @@ class HomeAnime extends React.Component{
                 <div className = 'row hero'>
                         <div className = 'col l4 s0 ' id = 'left-screen'>
                             df
-                            <Triangle containerID = 'left-screen'/>
+                           
                         </div>
                         <StyledBanner className = 'col l4 s12'>
                             <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
@@ -40,7 +40,7 @@ class HomeAnime extends React.Component{
                         </StyledBanner>
                         <div id = 'right-screen' className = 'col l4 s0'>
                             df
-                            <Triangle containerID = 'right-screen'/>
+                            
                         </div>
                 </div>
 

@@ -19,7 +19,7 @@ const configSetup = (char, index) => {
     config.char = char;
     config.XOffset = randomArcPoint(38).x; //((index % 2) == 0) ? 25 : -25;
     config.YOffset = randomArcPoint(38).y;// ((index % 2) == 0) ? -75 : 75;
-    config.duration = 400;
+    config.duration = 600;
     config.delay = 5350;
     return config;
 }

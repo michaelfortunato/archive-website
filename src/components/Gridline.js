@@ -34,9 +34,9 @@ const StyledGridline = styled.div`
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms;
 
-        -webkit-transition-property: all;
-        -webkit-transition-duration: ${(props) => props.duration}ms; 
-        -webkit-transition-delay: ${(props) => props.delay}ms;
+        transition-property: all;
+        transition-duration: ${(props) => props.duration}ms; 
+        transition-delay: ${(props) => props.delay}ms;
         will-change: all;
         
     }

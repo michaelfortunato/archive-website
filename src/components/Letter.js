@@ -7,10 +7,9 @@ const StyledLetter = styled.span`
     position: relative;
     display:inline-block;
 
-    
+    transform: translate(0, 0);
 
     &.letter-appear, &.letter-enter{
-        //opacity:0;
         transform: translate(${(props) => props.XOffset}vw, ${(props) => props.YOffset}vh); 
     }
     
@@ -23,14 +22,15 @@ const StyledLetter = styled.span`
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
         
-       // transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
+
+        will-change: all;
 
     
     
     }
     &.letter-appear-done, &.letter-enter-done{
-        //opacity: 1:
-        transform: translate(0, 0);
+         transform: translate(0, 0);
     
     }
 
