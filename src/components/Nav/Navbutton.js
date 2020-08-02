@@ -24,11 +24,6 @@ const StyledNavbutton = styled.div`
         left: 0;
     }
 
-
-
-
-
-
 `;
 
 

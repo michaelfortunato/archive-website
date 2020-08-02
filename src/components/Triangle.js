@@ -10,12 +10,14 @@ class Triangle extends React.Component {
       this.windowElement = React.createRef();
 
     }
+    
     componentDidMount() {
         
-        /*let height = document.getElementById(this.props.containerID).offsetHeight;
+        let height = document.getElementById(this.props.containerID).offsetHeight;
         let width = document.getElementById(this.props.containerID).offsetWidth;
         console.log(height);
-        console.log(width);*/
+        console.log(width);
+        
 
         let scene = new THREE.Scene();
         let camera = new THREE.PerspectiveCamera( 75, 2, 0.1, 1000 );
@@ -36,13 +38,16 @@ class Triangle extends React.Component {
           renderer.render( scene, camera );
         };
         animate();
+              
       }
+      
 
     render() {
 
         return (
-            <div ref={this.windowElement} />
-          )
+          
+           <div ref={this.windowElement} />
+          );
     }
 
 }

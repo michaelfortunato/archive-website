@@ -1,5 +1,5 @@
 import React from 'react'
-import { CSSTransition } from 'react-css-transition';
+import { CSSTransition } from 'react-transition-group';
 import  styled  from 'styled-components';
 import { Letter, StyledLetter } from './Letter.js'
 
