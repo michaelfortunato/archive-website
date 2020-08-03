@@ -29,6 +29,7 @@ const StyledGridline = styled.div`
         top: ${(props) => props.isRow ? '': '0% !important'};
         
         border-radius: 0;
+      
 
         transition-property: all;
         transition-duration: ${(props) => props.duration}ms; 
@@ -37,6 +38,14 @@ const StyledGridline = styled.div`
         transition-property: all;
         transition-duration: ${(props) => props.duration}ms; 
         transition-delay: ${(props) => props.delay}ms;
+        
+        -webkit-transition-property: all;
+        -webkit-transition-duration: ${(props) => props.duration}ms; 
+        -webkit-transition-delay: ${(props) => props.delay}ms;
+
+        -webkit-transition-property: all;
+        -webkit-transition-duration: ${(props) => props.duration}ms; 
+        -webkit-transition-delay: ${(props) => props.delay}ms;
         will-change: all;
         
     }

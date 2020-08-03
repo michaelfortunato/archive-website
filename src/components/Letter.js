@@ -22,9 +22,8 @@ const StyledLetter = styled.span`
         transition-duration: ${(props) => props.duration}ms;
         transition-delay: ${(props) => props.delay}ms;
         
-        transition-timing-function: ease-in;
 
-        will-change: all;
+
 
     
     

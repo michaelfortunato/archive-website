@@ -20,7 +20,7 @@ const defaultGridProps = {
 
 const StyledBanner = styled.div`
     position: relative;
-    top: 14%;
+    top: 13%;
 
 `;
 
@@ -30,17 +30,15 @@ class HomeAnime extends React.Component{
             <div >
                 <Grid  {...defaultGridProps} />
                 <div className = 'row hero'>
-                        <div className = 'col l4 s0 ' id = 'left-screen'>
-                            df
-                           
+                        <div style = {{'height': '50%'}} className = 'col l4 s0 ' id = 'LT'>
+                            <Triangle containerID = "LT"/>
                         </div>
                         <StyledBanner className = 'col l4 s12'>
                             <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                             <Description />
                         </StyledBanner>
-                        <div id = 'right-screen' className = 'col l4 s0'>
-                            df
-                            
+                        <div style = {{'height': '50%'}} className = 'col l4 s0' id = 'RT'>
+                            <Triangle containerID = "RT"/>
                         </div>
                 </div>
 
