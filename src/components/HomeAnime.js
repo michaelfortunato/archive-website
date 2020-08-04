@@ -20,31 +20,34 @@ const defaultGridProps = {
 
 const StyledBanner = styled.div`
     position: relative;
-    top: 13%;
+    top: 14%;
 
 `;
 
-class HomeAnime extends React.Component{
-    render(){
-        return(
-            <div >
-                <Grid  {...defaultGridProps} />
-                <div className = 'row hero'>
-                        <div style = {{'height': '50%'}} className = 'col l4 s0 ' id = 'LT'>
-                            <Triangle containerID = "LT"/>
-                        </div>
-                        <StyledBanner className = 'col l4 s12'>
-                            <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
-                            <Description />
-                        </StyledBanner>
-                        <div style = {{'height': '50%'}} className = 'col l4 s0' id = 'RT'>
-                            <Triangle containerID = "RT"/>
-                        </div>
-                </div>
+const HomeAnime = (props) => {
 
+
+
+    return(
+        <div >
+            <Grid  {...defaultGridProps} />
+            <div className = 'row hero'>
+                    <div className = 'col l2 s0 ' id = 'left-screen'>
+                        df
+                        <Triangle containerID = 'left-screen'/>
+                    </div>
+                    <StyledBanner className = 'col l8 s12'>
+                        <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
+                        <Description />
+                    </StyledBanner>
+                    <div id = 'right-screen' className = 'col l2 s0'>
+                        df
+                        <Triangle containerID = 'right-screen'/>
+                    </div>
             </div>
+
+        </div>
         );
-    }
 }
 
 export default HomeAnime;
