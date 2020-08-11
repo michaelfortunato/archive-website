@@ -21,7 +21,7 @@ const StyledDescription = styled.div`
         opacity: 1;
         transition-property: all;
         transition-duration: 1500ms;
-        transition-delay: 6500ms;
+        transition-delay: 8000ms;
     }
     &.fade-in-appear-done, &.fade-in-enter-done {
         opacity: 1;
@@ -55,7 +55,7 @@ const Description = (props) => {
         appear = {true}
         in = {true}
         classNames = 'fade-in'
-        timeout = {8000}>
+        timeout = {9500}>
             <StyledDescription>
             {aniTags}
             </StyledDescription>
