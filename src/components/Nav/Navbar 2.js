@@ -21,7 +21,9 @@ const Navbar = (props) => {
     return(
         <StyledNavbar>
             <Navbutton  isVisible = {isVisible} setIsVisible =  {setIsVisible} />
+            <div style = {{'width': '100vw', 'height': '26vh', 'filter': 'drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5))'}}>
             <NavContent isVisible = {isVisible} setIsVisible =  {setIsVisible} />
+            </div>
         </StyledNavbar>
     );
 }
