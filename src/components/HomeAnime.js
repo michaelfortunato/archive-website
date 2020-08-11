@@ -12,7 +12,7 @@ const defaultGridProps = {
     numLines: 12,
     offset: 0,
     avgDuration: 200,
-    avgDelay: 3000,
+    avgDelay: 3500,
     duration: 1500,
     delay: 6000,
     isDot: true,
