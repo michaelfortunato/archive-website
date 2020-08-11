@@ -14,7 +14,7 @@ const defaultGridProps = {
     avgDuration: 200,
     avgDelay: 3500,
     duration: 1500,
-    delay: 6000,
+    delay: 6500,
     isDot: true,
 };
 
