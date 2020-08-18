@@ -8,7 +8,7 @@ const StyledNavbutton = styled.div`
     left:2.5%;
     color :#F5F5F5; 
     font-size: 65px;
-    z-index: 1;
+    z-index: 2;
     
     width: 40px;
     height: 45px;

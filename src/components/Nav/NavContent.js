@@ -12,7 +12,7 @@ const StyledNavContent = styled.div`
 
 
 
-    z-index: 0;
+    z-index: 2;
 
 
     &.toggle-nav-enter{

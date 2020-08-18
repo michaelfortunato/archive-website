@@ -29,7 +29,7 @@ const HomeAnime = (props) => {
 
 
     return(
-        <div >
+        <div>
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
                     <div className = 'col l2 s0 ' >
@@ -39,7 +39,7 @@ const HomeAnime = (props) => {
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div className = 'col l2 s0 '>
+                    <div className = 'col l2 s0'  style = {{zIndex: '1'}} >
                         <Triangle />
                     </div>
             </div>
