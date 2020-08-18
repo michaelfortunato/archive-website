@@ -96,7 +96,7 @@ const Grid = (props) => {
     /* change the state after animation is complete */
         return (
             <CSSTransition
-                appear = {false}
+                appear = {true}
                 in = {true}
                 timeout = {props.duration + props.delay}
                 classNames = 'fade-out'

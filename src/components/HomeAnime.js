@@ -32,14 +32,14 @@ const HomeAnime = (props) => {
         <div>
             <Grid  {...defaultGridProps} />
             <div className = 'row hero'>
-                    <div className = 'col l2 s0 ' >
+                    <div className = 'col l3 s0 ' >
                         <Triangle />
                     </div>
-                    <StyledBanner className = 'col l8 s12'>
+                    <StyledBanner className = 'col l6 s12'>
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div className = 'col l2 s0'  style = {{zIndex: '1'}} >
+                    <div className = 'col l3 s0' >
                         <Triangle />
                     </div>
             </div>
