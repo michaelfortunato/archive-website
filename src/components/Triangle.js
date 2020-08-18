@@ -1,12 +1,24 @@
 import React from 'react'
 import ReactDOM from "react-dom";
-import * as THREE from 'three'
-import * as Ammo from 'ammo'
+import Lottie from 'react-lottie'
+import animationData from '../data2.json'
 
 
 
 const Triangle = (props) => {
-  return null;
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    animationData: animationData,
+    
+  };
+  return (
+    
+    <Lottie options={defaultOptions}/>
+ 
+ 
+
+  );
 }
 
 

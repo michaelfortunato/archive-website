@@ -39,7 +39,7 @@ const HomeAnime = (props) => {
                         <Name firstName = 'Michael' middleName = 'Newman' lastName = 'Fortunato'/>
                         <Description />
                     </StyledBanner>
-                    <div className = 'col l2 s0'>
+                    <div className = 'col l2 s0 '>
                         <Triangle />
                     </div>
             </div>
