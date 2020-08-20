@@ -14,9 +14,9 @@ const Triangle = (props) => {
   };
   return (
     <Lottie options={defaultOptions}
-      width = '100%'
-      height = '100%'
-    
+      width = '50vw'
+      height = '100vh'
+      style = {{'position':'relative', 'top':'10%'}}
     />
  
  
